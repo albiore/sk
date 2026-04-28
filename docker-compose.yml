@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mount credentials.json from host into container
+      - ./credentials.json:/app/credentials.json:ro
+    environment:
+      # Alternatively, paste your service account JSON as an env var:
+      # GOOGLE_CREDENTIALS_JSON: '{"type":"service_account",...}'
+      STREAMLIT_THEME_BASE: dark
+    restart: unless-stopped
