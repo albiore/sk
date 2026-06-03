@@ -54,6 +54,21 @@ def clean_amazon_file(raw: pd.DataFrame):
     df.columns = df.columns.str.strip()
     log["total_in"] = len(df)
 
+    # Dropped-status buckets — for visibility only, NOT pushed to the model.
+    _status = df["OrderStatus"].value_counts()
+    log["cancelled"] = int(_status.get("Cancelled", 0))
+    log["unshipped"] = int(_status.get("Unshipped", 0))
+    log["returned"]  = int(_status.get("Return", 0))
+
+    # Refunds = returned D2C orders for our ASINs. Seller Board books these as a
+    # separate refund line while still counting the original sale; we surface them
+    # here but keep them OUT of active_df so pushed actuals stay shipped-paying net.
+    _ret = df[(df["OrderStatus"] == "Return") & (df["IsBusinessOrder"] == False)].copy()
+    _ret["product_group"] = _ret["Products"].map(ASIN_MAP)
+    _ret = _ret[_ret["product_group"].notna()]
+    log["returns_units"] = int(pd.to_numeric(_ret["NumberOfItems"], errors="coerce").fillna(0).sum())
+    log["returns_value"] = round(float(pd.to_numeric(_ret["OrderTotalAmount"], errors="coerce").fillna(0).sum()), 2)
+
     # Keep only Shipped orders
     df = df[df["OrderStatus"] == "Shipped"].copy()
     log["non_shipped"] = log["total_in"] - len(df)
@@ -197,6 +212,9 @@ if log:
         ("Kept (Shipped, D2C)",        log["total_out"]),
         ("of which Vine (free units)", log.get("vine_units", 0)),
         ("of which Subscribe & Save",  log.get("sns_orders", 0)),
+        ("Cancelled (dropped)",        log.get("cancelled", 0)),
+        ("Unshipped (dropped)",        log.get("unshipped", 0)),
+        ("Returned (dropped)",         log.get("returned", 0)),
     ]
     pills_html = '<div class="step-row">'
     for label, count in steps:
@@ -204,6 +222,13 @@ if log:
         pills_html += f'<div class="step-pill {active}">◎ {label}: {count}</div>'
     pills_html += "</div>"
     st.markdown(pills_html, unsafe_allow_html=True)
+
+    st.caption(
+        f"↩︎ Refunds (computed, **not** pushed): {log.get('returned', 0)} returned orders · "
+        f"{log.get('returns_units', 0)} units · ${log.get('returns_value', 0):,.2f}. "
+        "Seller Board books these as a separate refund line; the model push sends "
+        "shipped-paying net revenue only."
+    )
 
 # ── KPI cards ─────────────────────────────────────────────────────────────────
 st.markdown('<div class="section-label">03 — Overview</div>', unsafe_allow_html=True)
@@ -348,7 +373,7 @@ if sheets_status == "ready":
         placeholder="https://docs.google.com/spreadsheets/d/…",
         key="amz_sheet_url",
     )
-    if st.button("Push actuals → Performance Ov (Amazon rows 64/65 · 81/82 · 98/99)"):
+    if st.button("Push actuals → Performance Ov (Amazon revenue 67/68 · orders 84/85 · units 101/102)"):
         if sheet_url:
             with st.spinner("Writing to Performance Ov…"):
                 result = push_amazon_to_performance_overview(active_df, sheet_url)
