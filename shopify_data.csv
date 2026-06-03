@@ -1,0 +1,642 @@
+Month,Order name,Customer name,New or returning customer,Products bought together,Product title,Order tag,Total sales,Gross sales,Discounts,Quantity ordered,Orders,order_line_number,is_first_line
+2025-12-01,#1099,Susie Feinstein,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1096,Alana Taylor,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1097,Zachary Stone,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2025-12-01,#1104,Ali Feinstein,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2025-12-01,#1096,Alana Taylor,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2025-12-01,#1106,Beth Fishman,New,"['Gut Balance','Mood Balance']",Mood Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2025-12-01,#1092,Eric Bates,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1098,Efi Gershom,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1108,Shaked Nir Heyman,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1098,Efi Gershom,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1110,Beata Kanter,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1093,Justin Tuchman,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2025-12-01,#1106,Beth Fishman,New,"['Gut Balance','Mood Balance']",Gut Balance,Subscription First Order,49.99,49.99,0.0,1,1,4,False
+2025-12-01,#1108,Shaked Nir Heyman,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2025-12-01,#1091,Tabatha Duchnowski,Returning,['Gut Balance'],Gut Balance,uncaptured,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1105,Katelyn Bishop,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2025-12-01,#1106,Beth Fishman,New,"['Gut Balance','Mood Balance']",Gut Balance,Subscription,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1106,Beth Fishman,New,"['Gut Balance','Mood Balance']",Mood Balance,Subscription,42.49,42.49,0.0,1,1,3,False
+2025-12-01,#1100,Jeremy Scharf,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,2,False
+2025-12-01,#1109,Dr. Avi Ishaaya,New,"['Gut Balance','Mood Balance','Gut Balance Brochure','Mood Balance Brochure']",Gut Balance,,599.88,1199.76,-599.88,24,1,1,True
+2025-12-01,#1100,Jeremy Scharf,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,1,True
+2025-12-01,#1095,Brett Kaufman,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1083,JOE SANCHEZ,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1091,Tabatha Duchnowski,Returning,['Gut Balance'],Gut Balance,Replacement Order,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1094,Luis Fabre,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1094,Luis Fabre,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1099,Susie Feinstein,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1110,Beata Kanter,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1104,Ali Feinstein,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1097,Zachary Stone,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1105,Katelyn Bishop,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1093,Justin Tuchman,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2025-12-01,#1083,JOE SANCHEZ,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2025-12-01,#1092,Eric Bates,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2025-12-01,#1095,Brett Kaufman,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1143,Valerie Mack,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1128,James Lee,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,2,False
+2026-01-01,#1118,Lacy Omsberg,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-01-01,#1113,Gina Calderon,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-01-01,#1157,Trina Fisher,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1154,Jeremy Reinstein,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1132,Mariah Woodruff,New,['Gut Balance'],Gut Balance,,84.99,99.98,-14.99,2,1,1,True
+2026-01-01,#1155,Danielle Nivins,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1133,Chiquita Lemus,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-01-01,#1142,Taylor Hersh,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1156,Christine Cockrell,Returning,['Gut Balance'],Gut Balance,,37.0,49.99,-12.99,1,1,2,False
+2026-01-01,#1136,Joanna Bernstein,New,['Gut Balance'],Gut Balance,,37.0,49.99,-12.99,1,1,2,False
+2026-01-01,#1147,Chelsea Didier,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1140,Christine Cockrell,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1157,Trina Fisher,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1149,Mary Broadway,New,['Gut Balance'],Gut Balance,,45.0,49.99,-4.99,1,1,2,False
+2026-01-01,#1114,Ashley Hall,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-01-01,#1145,JESSICA BREWER,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1119,Anna Blask,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1113,Gina Calderon,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1115,Lindsay Bird,New,['Gut Balance'],Gut Balance,,42.5,49.99,-7.49,1,1,1,True
+2026-01-01,#1115,Lindsay Bird,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1144,Angie Lamb,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,2,False
+2026-01-01,#1127,MARLO MALMIS,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1159,Brittany Wassell,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1129,James Lee,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,2,False
+2026-01-01,#1141,Kami Horsley,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-01-01,#1144,Angie Lamb,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,1,True
+2026-01-01,#1127,MARLO MALMIS,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,1,True
+2026-01-01,#1155,Danielle Nivins,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1159,Brittany Wassell,New,['Gut Balance'],Gut Balance,,45.0,49.99,-4.99,1,1,1,True
+2026-01-01,#1146,Heidi Truit,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-01-01,#1129,James Lee,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,1,True
+2026-01-01,#1143,Valerie Mack,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1133,Chiquita Lemus,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-01-01,#1135,Rachel Harrington,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-01-01,#1142,Taylor Hersh,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1119,Anna Blask,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,1,True
+2026-01-01,#1156,Christine Cockrell,Returning,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1128,James Lee,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,1,True
+2026-01-01,#1146,Heidi Truit,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-01-01,#1158,Tiffany Chandra,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-01-01,#1135,Rachel Harrington,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1150,Lisa Ganzermiller,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-01-01,#1158,Tiffany Chandra,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-01-01,#1148,tawnya rodriguez,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-01-01,#1136,Joanna Bernstein,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1149,Mary Broadway,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1140,Christine Cockrell,New,['Gut Balance'],Gut Balance,,37.0,49.99,-12.99,1,1,1,True
+2026-01-01,#1150,Lisa Ganzermiller,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2026-01-01,#1152,Lisa Groos,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1145,JESSICA BREWER,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1154,Jeremy Reinstein,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-01-01,#1148,tawnya rodriguez,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-01-01,#1152,Lisa Groos,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-01-01,#1147,Chelsea Didier,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1141,Kami Horsley,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-01-01,#1114,Ashley Hall,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-01-01,#1118,Lacy Omsberg,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1227,Susan Lancaster,New,['Gut Balance'],Shipping,All customers,5.13,0.0,0.0,0,0,4,False
+2026-02-01,#1160,Glenna Baker,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1168,Shianne Gonzalez,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1228,Kelli Evatt,New,['Gut Balance'],Gut Balance,Subscription,38.25,42.49,-4.24,1,1,2,False
+2026-02-01,#1210,Amber Johnson,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1185,Lauren Turchin,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1166,Kellye Wagner,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1214,Christian Yungert,New,['Gut Balance'],Gut Balance,Subscription First Order,38.25,42.49,-4.24,1,1,1,True
+2026-02-01,#1182,Aleigha Hallberg,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1189,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,3,False
+2026-02-01,#1178,Nikki Lynch,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1166,Kellye Wagner,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1179,Lauren Knowles,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1225,Alicia Nelsen,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1174,Kelsey Eastman,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1175,Alina Moffitt,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1160,Glenna Baker,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1203,Kamila Ciringione,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1227,Susan Lancaster,New,['Gut Balance'],Gut Balance,Shop Cash offers acquired,51.24,49.99,0.0,1,1,3,False
+2026-02-01,#1227,Susan Lancaster,New,['Gut Balance'],Gut Balance,Grow sales - 01,51.24,49.99,0.0,1,1,2,False
+2026-02-01,#1188,Kendra Caughman,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1173,Alaina Ward,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1199,Orr Orenstein,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,2,False
+2026-02-01,#1200,Ashlie Hedin,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1161,Brittni Pannone,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1171,Dani Ray,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1161,Brittni Pannone,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1175,Alina Moffitt,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1183,Sumiyo Hori,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1220,Viviana Martinez,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,2,False
+2026-02-01,#1211,Yuliya Mattei,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1186,Mindy Treasure,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1172,Dr. Avi Ishaaya,Returning,['Gut Balance'],Gut Balance,,599.88,1299.74,-699.86,26,1,1,True
+2026-02-01,#1193,Nicole Allen-Wright,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1201,Holly Carroll,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1221,Lindsey Sue Roy,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1174,Kelsey Eastman,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1227,Susan Lancaster,New,['Gut Balance'],Shipping,Shop Cash offers acquired,5.13,0.0,0.0,0,0,6,False
+2026-02-01,#1186,Mindy Treasure,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1224,Monica Baker,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1215,tawnya rodriguez,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,4,False
+2026-02-01,#1168,Shianne Gonzalez,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1218,Erin Harris,New,['Gut Balance'],Gut Balance,Subscription First Order,38.25,42.49,-4.24,1,1,2,False
+2026-02-01,#1216,Lauren Czernota,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1191,SheShin Yeung,New,['Gut Balance'],Gut Balance,,70.0,99.98,-29.98,2,1,1,True
+2026-02-01,#1192,Andrea Townsend,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1167,Judith Dallemand,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1189,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,4,False
+2026-02-01,#1165,Rebecca Goldstein,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1158,Tiffany Chandra,New,['Gut Balance'],Shipping,,-5.0,0.0,0.0,0,0,4,False
+2026-02-01,#1184,Rachel Marie,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1167,Judith Dallemand,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1215,tawnya rodriguez,Returning,['Gut Balance'],Shipping,Subscription Recurring Order,5.0,0.0,0.0,0,0,3,False
+2026-02-01,#1216,Lauren Czernota,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1214,Christian Yungert,New,['Gut Balance'],Gut Balance,Subscription,38.25,42.49,-4.24,1,1,2,False
+2026-02-01,#1195,Lauri Dalbec,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1184,Rachel Marie,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1158,Tiffany Chandra,New,['Gut Balance'],Gut Balance,,-49.99,0.0,0.0,0,0,3,False
+2026-02-01,#1219,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Loox - Review Request Email,42.49,42.49,0.0,1,1,3,False
+2026-02-01,#1182,Aleigha Hallberg,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1194,Jenifer Khan,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1227,Susan Lancaster,New,['Gut Balance'],Gut Balance,All customers,51.24,49.99,0.0,1,1,5,False
+2026-02-01,#1215,tawnya rodriguez,Returning,['Gut Balance'],Shipping,Subscription,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1181,Molly Cerny,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1189,Chiquita Lemus,Returning,['Gut Balance'],Shipping,Subscription,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1202,Brittney Smock,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1173,Alaina Ward,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1156,Christine Cockrell,Returning,['Gut Balance'],Gut Balance,,-37.0,0.0,0.0,0,0,3,False
+2026-02-01,#1199,Orr Orenstein,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,1,True
+2026-02-01,#1187,Lindsey French,New,['Gut Balance'],Gut Balance,chatty-assisted,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1210,Amber Johnson,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1223,Sarah Gallenstein,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1198,Estefani Calleja,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1164,Amanda Hart,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1209,Erin Middleton,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1197,Katherine Keith,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1201,Holly Carroll,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1188,Kendra Caughman,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1189,Chiquita Lemus,Returning,['Gut Balance'],Shipping,Subscription Recurring Order,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1164,Amanda Hart,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1202,Brittney Smock,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1227,Susan Lancaster,New,['Gut Balance'],Shipping,Grow sales - 01,5.13,0.0,0.0,0,0,1,True
+2026-02-01,#1194,Jenifer Khan,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1221,Lindsey Sue Roy,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1187,Lindsey French,New,['Gut Balance'],Shipping,chatty-assisted,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1224,Monica Baker,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1190,Danielle Reinstein,New,['Gut Balance'],Gut Balance,TikTokOrderID:577282839561867929,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1204,Ana Maria Aguirre,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1218,Erin Harris,New,['Gut Balance'],Gut Balance,Subscription,38.25,42.49,-4.24,1,1,1,True
+2026-02-01,#1209,Erin Middleton,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1192,Andrea Townsend,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1204,Ana Maria Aguirre,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1190,Danielle Reinstein,New,['Gut Balance'],Gut Balance,Shipped by Seller,49.99,49.99,0.0,1,1,4,False
+2026-02-01,#1193,Nicole Allen-Wright,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1179,Lauren Knowles,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1180,Jaden Kalina,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1190,Danielle Reinstein,New,['Gut Balance'],Gut Balance,uncaptured,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1183,Sumiyo Hori,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1177,Lindsay Mordecai,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1163,Stephanie Bunnell,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1181,Molly Cerny,New,['Gut Balance'],Gut Balance,,45.0,49.99,-4.99,1,1,1,True
+2026-02-01,#1165,Rebecca Goldstein,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1203,Kamila Ciringione,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1220,Viviana Martinez,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,1,True
+2026-02-01,#1185,Lauren Turchin,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1163,Stephanie Bunnell,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1208,Rachel Maynard,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1225,Alicia Nelsen,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1228,Kelli Evatt,New,['Gut Balance'],Gut Balance,Subscription First Order,38.25,42.49,-4.24,1,1,1,True
+2026-02-01,#1222,Nicole Veras,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-02-01,#1195,Lauri Dalbec,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1162,Shannon Bova,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-02-01,#1162,Shannon Bova,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1222,Nicole Veras,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-02-01,#1177,Lindsay Mordecai,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1178,Nikki Lynch,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1219,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1190,Danielle Reinstein,New,['Gut Balance'],Gut Balance,Carrier mapping missing,49.99,49.99,0.0,1,1,3,False
+2026-02-01,#1180,Jaden Kalina,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-02-01,#1215,tawnya rodriguez,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-02-01,#1171,Dani Ray,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1196,Nicole White,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-02-01,#1211,Yuliya Mattei,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-02-01,#1223,Sarah Gallenstein,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1219,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-02-01,#1208,Rachel Maynard,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1294,Kendra Caughman,Returning,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,1,True
+2026-03-01,#1239,Jennifer Corso,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1287,Saussan Hajhassan,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1233,Remy Reinstein,New,['Gut Balance'],Gut Balance,uncaptured,49.99,49.99,0.0,1,1,3,False
+2026-03-01,#1240,Ann Colburn,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1267,Susan Symons,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1293,Tracy Probst,New,['Gut Balance'],Gut Balance,Grow sales - 01,49.99,49.99,0.0,1,1,4,False
+2026-03-01,#1258,Heidi Young,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1229,Bailee Cochran,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1291,jenny kelly,New,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-03-01,#1234,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,3,False
+2026-03-01,#1286,Dr. Avi Ishaaya,Returning,"['Gut Balance Master Carton - 12 jars','Mood Balance Master Carton - 12 jars']",Gut Balance Master Carton - 12 jars,,599.88,1199.76,-599.88,2,1,2,False
+2026-03-01,#1244,Kelsey Eastman,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1264,Janine Katsigiorgis,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1285,Lauren Zorko,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1272,Katie Vogele-Bongiovanni,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1274,Erin Middleton,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1298,Marilu Terrones,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,2,False
+2026-03-01,#1258,Heidi Young,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1243,Yvonne Boudreaux,New,['Gut Balance'],Shipping,upsell.com,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1273,Kaici Hix,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1307,Erin Harris,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1291,jenny kelly,New,['Gut Balance'],Gut Balance,Subscription First Order,44.99,44.99,0.0,1,1,1,True
+2026-03-01,#1279,Joy Walden,New,['Mood Balance'],Mood Balance,upsell.com,92.48,92.48,0.0,2,1,3,False
+2026-03-01,#1282,Nina Madigan,New,['Gut Balance'],Gut Balance,,45.0,49.99,-4.99,1,1,2,False
+2026-03-01,#1238,Garrett Baez,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1262,Natalie Larson,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1281,Rachel Blay,New,['Gut Balance'],Shipping,Subscription First Order,5.0,0.0,0.0,0,0,4,False
+2026-03-01,#1303,Erica Kaytsner,New,['Gut Balance'],Gut Balance,Subscription First Order,36.0,44.99,-8.99,1,1,2,False
+2026-03-01,#1243,Yvonne Boudreaux,New,['Gut Balance'],Gut Balance,upsell.com,77.5,99.98,-22.48,2,1,2,False
+2026-03-01,#1281,Rachel Blay,New,['Gut Balance'],Gut Balance,upsell.com,79.99,94.98,-14.99,2,1,5,False
+2026-03-01,#1256,Shannon Hertz,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1251,Ashley Harders,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1295,Michal Leventhal,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1272,Katie Vogele-Bongiovanni,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1307,Erin Harris,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1260,Lauren Adamson,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1277,Jessica Turner,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1300,Christine Lucarelli,New,['Gut Balance'],Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1311,Bailee Cochran,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1254,Dani Ray,Returning,['Gut Balance'],Gut Balance,Subscription,39.99,39.99,0.0,1,1,1,True
+2026-03-01,#1257,Amy Knotts,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1295,Michal Leventhal,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1269,Candice Delcoco,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1292,Mindy Treasure,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1259,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1232,Catherine Lunde,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1263,Lauren Bransky,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1299,Christine Saylor,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1232,Catherine Lunde,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1271,Lara Glass,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,2,False
+2026-03-01,#1255,Laura Park,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1255,Laura Park,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1265,Lauri Dalbec,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1241,Tamar Reich,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1246,Erin Fornadel,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1254,Dani Ray,Returning,['Gut Balance'],Gut Balance,Subscription First Order,39.99,39.99,0.0,1,1,2,False
+2026-03-01,#1248,Lauri Dalbec,Returning,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1245,Lilian Holm,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1300,Christine Lucarelli,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1273,Kaici Hix,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-03-01,#1293,Tracy Probst,New,['Gut Balance'],Shipping,Grow sales - 01,5.0,0.0,0.0,0,0,6,False
+2026-03-01,#1289,Agnes Olafsson,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-03-01,#1281,Rachel Blay,New,['Gut Balance'],Shipping,Subscription,5.0,0.0,0.0,0,0,6,False
+2026-03-01,#1271,Lara Glass,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,1,True
+2026-03-01,#1269,Candice Delcoco,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1240,Ann Colburn,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,2,False
+2026-03-01,#1304,Chelsi Devilbiss,New,['Gut Balance'],Gut Balance,Subscription,102.0,127.47,-25.47,3,1,2,False
+2026-03-01,#1293,Tracy Probst,New,['Gut Balance'],Shipping,Shop Cash offers acquired,5.0,0.0,0.0,0,0,5,False
+2026-03-01,#1276,Patrick Jensen,New,['Mood Balance'],Mood Balance,Subscription First Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1231,Lorna Ruiz,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1302,Kelli Evatt,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1278,Phaedra DeNatale,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1283,heather potter,New,"['Gut Balance','Mood Balance']",Mood Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1294,Kendra Caughman,Returning,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,2,False
+2026-03-01,#1234,Stephanie Bunnell,Returning,['Gut Balance'],Shipping,Subscription Recurring Order,5.0,0.0,0.0,0,0,4,False
+2026-03-01,#1275,Lisa Ganzermiller,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-03-01,#1296,Rachel Wooten,New,['Gut Balance'],Gut Balance,Subscription,127.47,127.47,0.0,3,1,2,False
+2026-03-01,#1257,Amy Knotts,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1284,JESSICA BREWER,Returning,"['Gut Balance','Mood Balance']",Gut Balance,Subscription,44.99,44.99,0.0,1,1,4,False
+2026-03-01,#1301,Sarah Gallenstein,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-03-01,#1239,Jennifer Corso,New,['Gut Balance'],Shipping,,-35.0,0.0,0.0,0,0,2,False
+2026-03-01,#1237,Kirsten Bubb,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1263,Lauren Bransky,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1284,JESSICA BREWER,Returning,"['Gut Balance','Mood Balance']",Mood Balance,Subscription,44.99,44.99,0.0,1,1,3,False
+2026-03-01,#1265,Lauri Dalbec,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1293,Tracy Probst,New,['Gut Balance'],Gut Balance,All customers,49.99,49.99,0.0,1,1,3,False
+2026-03-01,#1282,Nina Madigan,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1301,Sarah Gallenstein,Returning,['Gut Balance'],Gut Balance,Subscription First Order,44.99,44.99,0.0,1,1,1,True
+2026-03-01,#1278,Phaedra DeNatale,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1306,JUAN A LIZARRAGA,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1286,Dr. Avi Ishaaya,Returning,"['Gut Balance Master Carton - 12 jars','Mood Balance Master Carton - 12 jars']",Mood Balance Master Carton - 12 jars,,299.94,599.88,-299.94,1,1,1,True
+2026-03-01,#1267,Susan Symons,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1251,Ashley Harders,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1281,Rachel Blay,New,['Gut Balance'],Gut Balance,Subscription First Order,79.99,94.98,-14.99,2,1,1,True
+2026-03-01,#1242,Ana Liptak,New,"['Gut Balance','Mood Balance']",Mood Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1256,Shannon Hertz,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1308,Jennifer Lavigne,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1270,jennifer lavio,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1309,Kristina Gomez,New,['Gut Balance'],Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1241,Tamar Reich,New,['Mood Balance'],Mood Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1242,Ana Liptak,New,"['Gut Balance','Mood Balance']",Gut Balance,,34.99,49.99,-15.0,1,1,2,False
+2026-03-01,#1230,Daniel Rothstein,New,['Gut Balance'],Gut Balance,,84.99,99.98,-14.99,2,1,1,True
+2026-03-01,#1293,Tracy Probst,New,['Gut Balance'],Shipping,All customers,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1250,Luciana Correa,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1250,Luciana Correa,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1236,Isca Ruiz,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1306,JUAN A LIZARRAGA,New,['Gut Balance'],Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1266,Robbin Kersey,New,"['Gut Balance','Mood Balance']",Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1260,Lauren Adamson,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1297,Steven Boothe,New,['Gut Balance'],Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1252,Kerri Park,New,['Mood Balance'],Mood Balance,,70.0,99.98,-29.98,2,1,1,True
+2026-03-01,#1234,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1233,Remy Reinstein,New,['Gut Balance'],Gut Balance,TikTokOrderID:577303882102837834,49.99,49.99,0.0,1,1,1,True
+2026-03-01,#1234,Stephanie Bunnell,Returning,['Gut Balance'],Shipping,Subscription,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1249,Danielle Nivins,Returning,['Gut Balance'],Gut Balance,,47.99,49.99,-2.0,1,1,1,True
+2026-03-01,#1235,Yolanda Wishart,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1259,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1280,Cristy Brenneman,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1277,Jessica Turner,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1304,Chelsi Devilbiss,New,['Gut Balance'],Gut Balance,Subscription First Order,102.0,127.47,-25.47,3,1,1,True
+2026-03-01,#1274,Erin Middleton,Returning,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1302,Kelli Evatt,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1248,Lauri Dalbec,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1292,Mindy Treasure,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1288,Nicole White,Returning,"['Gut Balance','Mood Balance']",Gut Balance,UpCart Upsell,49.99,49.99,0.0,1,1,1,True
+2026-03-01,#1280,Cristy Brenneman,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1303,Erica Kaytsner,New,['Gut Balance'],Gut Balance,Subscription,36.0,44.99,-8.99,1,1,1,True
+2026-03-01,#1262,Natalie Larson,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1233,Remy Reinstein,New,['Gut Balance'],Gut Balance,Shipped by Seller,49.99,49.99,0.0,1,1,2,False
+2026-03-01,#1308,Jennifer Lavigne,New,['Mood Balance'],Mood Balance,,34.99,49.99,-15.0,1,1,2,False
+2026-03-01,#1305,Yolanda Wishart,New,['Gut Balance'],Gut Balance,,84.98,99.98,-15.0,2,1,1,True
+2026-03-01,#1281,Rachel Blay,New,['Gut Balance'],Gut Balance,Subscription,79.99,94.98,-14.99,2,1,3,False
+2026-03-01,#1290,Iuliia Watson,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1293,Tracy Probst,New,['Gut Balance'],Gut Balance,Shop Cash offers acquired,49.99,49.99,0.0,1,1,2,False
+2026-03-01,#1288,Nicole White,Returning,"['Gut Balance','Mood Balance']",Mood Balance,UpCart Upsell,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1244,Kelsey Eastman,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1247,Katie Vitolins,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1276,Patrick Jensen,New,['Mood Balance'],Mood Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1249,Danielle Nivins,Returning,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1299,Christine Saylor,New,['Gut Balance'],Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1309,Kristina Gomez,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1298,Marilu Terrones,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,1,True
+2026-03-01,#1268,Deborah Moncho,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1237,Kirsten Bubb,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1264,Janine Katsigiorgis,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1283,heather potter,New,"['Gut Balance','Mood Balance']",Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-03-01,#1229,Bailee Cochran,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1231,Lorna Ruiz,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1297,Steven Boothe,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1236,Isca Ruiz,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1279,Joy Walden,New,['Mood Balance'],Mood Balance,Subscription,92.48,92.48,0.0,2,1,1,True
+2026-03-01,#1275,Lisa Ganzermiller,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1279,Joy Walden,New,['Mood Balance'],Mood Balance,Subscription First Order,92.48,92.48,0.0,2,1,2,False
+2026-03-01,#1289,Agnes Olafsson,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1285,Lauren Zorko,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-03-01,#1235,Yolanda Wishart,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1284,JESSICA BREWER,Returning,"['Gut Balance','Mood Balance']",Mood Balance,Subscription First Order,44.99,44.99,0.0,1,1,1,True
+2026-03-01,#1238,Garrett Baez,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1247,Katie Vitolins,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1268,Deborah Moncho,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1245,Lilian Holm,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1296,Rachel Wooten,New,['Gut Balance'],Gut Balance,Subscription First Order,127.47,127.47,0.0,3,1,1,True
+2026-03-01,#1290,Iuliia Watson,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1284,JESSICA BREWER,Returning,"['Gut Balance','Mood Balance']",Gut Balance,Subscription First Order,44.99,44.99,0.0,1,1,2,False
+2026-03-01,#1311,Bailee Cochran,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-03-01,#1266,Robbin Kersey,New,"['Gut Balance','Mood Balance']",Mood Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-03-01,#1281,Rachel Blay,New,['Gut Balance'],Shipping,upsell.com,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1287,Saussan Hajhassan,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-03-01,#1270,jennifer lavio,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-03-01,#1246,Erin Fornadel,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1326,Lara Glass,Returning,"['Gut Balance','Mood Balance']",Mood Balance,,49.99,49.99,0.0,1,1,2,False
+2026-04-01,#1348,Candice Graham,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1327,Lauren Adamson,Returning,['Gut Balance'],Gut Balance,Shop Cash offers acquired,54.36,49.99,0.0,1,1,2,False
+2026-04-01,#1371,John Mallo II,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1349,Amy DuPrat,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1343,Brandi Carmichael,New,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,2,False
+2026-04-01,#1318,Erin Fornadel,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1339,Laurie Rush,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1322,Carrie Stark,New,['Gut Balance'],Gut Balance,Subscription,40.5,44.99,-4.49,1,1,2,False
+2026-04-01,#1355,Francine Piontek,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1331,Ashleigh Ho,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1346,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1337,Laura Park,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-04-01,#1316,Jacques Bloomfield,New,['Mood Balance'],Mood Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-04-01,#1313,peggy harward,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-04-01,#1347,jenny kelly,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-04-01,#1333,Erin Middleton,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1346,Stephanie Bunnell,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1371,John Mallo II,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1341,Effie baroud,New,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,1,True
+2026-04-01,#1356,Laura Smout,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1333,Erin Middleton,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1336,Rachel Blay,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-04-01,#1344,Andrea Reyes,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1322,Carrie Stark,New,['Gut Balance'],Gut Balance,Subscription First Order,40.5,44.99,-4.49,1,1,1,True
+2026-04-01,#1358,Lanie Adan,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1364,Erica Kaytsner,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,2,False
+2026-04-01,#1320,Ashley Braa,New,['Gut Balance'],Gut Balance,chatty-assisted,42.49,42.49,0.0,1,1,3,False
+2026-04-01,#1367,Stephanie Carrera,New,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,2,False
+2026-04-01,#1370,Diana Meyer,New,['Gut Balance'],Gut Balance,,37.72,49.99,-14.99,1,1,2,False
+2026-04-01,#1327,Lauren Adamson,Returning,['Gut Balance'],Gut Balance,Grow sales - 01,54.36,49.99,0.0,1,1,3,False
+2026-04-01,#1365,Nick Kruger,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1334,Samantha Showalter,New,"['Gut Balance','Mood Balance']",Mood Balance,Subscription First Order,39.99,39.99,0.0,1,1,4,False
+2026-04-01,#1358,Lanie Adan,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1370,Diana Meyer,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1357,Donna Ordonez,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1342,Brian Nathanson,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1354,April Frye,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1357,Donna Ordonez,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1359,Marian McVicker,New,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,1,True
+2026-04-01,#1356,Laura Smout,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1353,Courtney Spencer,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1366,Randi Bolyard,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1338,Rachel Conkey,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1319,Michelle Minick,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1321,Ana Maria Aguirre,Returning,['Gut Balance'],Gut Balance,,84.99,99.98,-14.99,2,1,1,True
+2026-04-01,#1360,Kelli Evatt,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1342,Brian Nathanson,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1325,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1359,Marian McVicker,New,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,2,False
+2026-04-01,#1349,Amy DuPrat,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1341,Effie baroud,New,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,2,False
+2026-04-01,#1319,Michelle Minick,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1318,Erin Fornadel,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1316,Jacques Bloomfield,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1363,Lucy Joyce,Returning,['Gut Balance'],Gut Balance,Subscription First Order,44.99,44.99,0.0,1,1,2,False
+2026-04-01,#1292,Mindy Treasure,Returning,['Gut Balance'],Gut Balance,Subscription,-42.49,0.0,0.0,0,0,4,False
+2026-04-01,#1317,Lucy Joyce,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1329,Jim Pixton,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1317,Lucy Joyce,New,['Gut Balance'],Gut Balance,,34.99,49.99,-15.0,1,1,1,True
+2026-04-01,#1366,Randi Bolyard,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1315,Nicole White,Returning,"['Gut Balance','Mood Balance']",Gut Balance,UpCart Upsell,49.99,49.99,0.0,1,1,1,True
+2026-04-01,#1360,Kelli Evatt,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1328,Tony Martin,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1340,Lisa Ganzermiller,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1338,Rachel Conkey,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1312,Alena Ruvolo,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1340,Lisa Ganzermiller,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1335,Joy Walden,Returning,['Mood Balance'],Mood Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1348,Candice Graham,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1369,David Bailey,New,"['Gut Balance','Mood Balance']",Gut Balance,UpCart Upsell,49.99,49.99,0.0,1,1,1,True
+2026-04-01,#1324,Janine Katsigiorgis,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1292,Mindy Treasure,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,-42.49,0.0,0.0,0,0,3,False
+2026-04-01,#1353,Courtney Spencer,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1352,anna shaar,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1327,Lauren Adamson,Returning,['Gut Balance'],Gut Balance,All customers,54.36,49.99,0.0,1,1,1,True
+2026-04-01,#1368,Chris Tippins,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1336,Rachel Blay,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,1,True
+2026-04-01,#1339,Laurie Rush,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1355,Francine Piontek,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1330,Dani Ray,Returning,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,1,True
+2026-04-01,#1367,Stephanie Carrera,New,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,1,True
+2026-04-01,#1335,Joy Walden,Returning,['Mood Balance'],Mood Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1329,Jim Pixton,New,['Mood Balance'],Mood Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1325,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-04-01,#1313,peggy harward,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1364,Erica Kaytsner,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,1,True
+2026-04-01,#1369,David Bailey,New,"['Gut Balance','Mood Balance']",Mood Balance,UpCart Upsell,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1324,Janine Katsigiorgis,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1315,Nicole White,Returning,"['Gut Balance','Mood Balance']",Mood Balance,UpCart Upsell,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1330,Dani Ray,Returning,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,2,False
+2026-04-01,#1334,Samantha Showalter,New,"['Gut Balance','Mood Balance']",Gut Balance,Subscription,28.0,39.99,-11.99,1,1,3,False
+2026-04-01,#1365,Nick Kruger,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1354,April Frye,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1320,Ashley Braa,New,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-04-01,#1344,Andrea Reyes,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-04-01,#1368,Chris Tippins,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1343,Brandi Carmichael,New,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,1,True
+2026-04-01,#1326,Lara Glass,Returning,"['Gut Balance','Mood Balance']",Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-04-01,#1312,Alena Ruvolo,New,['Gut Balance'],Gut Balance,,42.5,49.99,-7.49,1,1,2,False
+2026-04-01,#1334,Samantha Showalter,New,"['Gut Balance','Mood Balance']",Mood Balance,Subscription,39.99,39.99,0.0,1,1,1,True
+2026-04-01,#1363,Lucy Joyce,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,1,True
+2026-04-01,#1347,jenny kelly,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,1,True
+2026-04-01,#1328,Tony Martin,New,['Mood Balance'],Mood Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-04-01,#1352,anna shaar,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-04-01,#1337,Laura Park,Returning,['Gut Balance'],Gut Balance,Subscription First Order,44.99,44.99,0.0,1,1,1,True
+2026-04-01,#1334,Samantha Showalter,New,"['Gut Balance','Mood Balance']",Gut Balance,Subscription First Order,28.0,39.99,-11.99,1,1,2,False
+2026-04-01,#1332,Jaclyn Jones,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-04-01,#1320,Ashley Braa,New,['Gut Balance'],Gut Balance,Subscription First Order,42.49,42.49,0.0,1,1,1,True
+2026-05-01,#1402,Lauri Dalbec,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-05-01,#1397,Ana Liptak,Returning,"['Gut Balance','Mood Balance']",Gut Balance,Subscription,44.99,44.99,0.0,1,1,3,False
+2026-05-01,#1436,Brian Nathanson,Returning,['Gut Balance'],Gut Balance,Subscription First Order,34.99,44.99,-10.0,1,1,1,True
+2026-05-01,#1419,Laura Park,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1404,Victoria Fazio,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1427,Joleen LaRoche,New,['Gut Balance'],Gut Balance,Subscription First Order,29.99,39.99,-10.0,1,1,2,False
+2026-05-01,#1391,Carrie Stark,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1320,Ashley Braa,New,['Gut Balance'],Gut Balance,Subscription First Order,-42.49,0.0,0.0,0,0,6,False
+2026-05-01,#1390,Kara Reed,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1385,Nadia Kluesner,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1384,Crystal Wilcox-Letosky,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1375,Cassidy Case,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1406,Annette Neist,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1395,Terra McDermott,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1414,Nicole White,Returning,"['Gut Balance','Mood Balance']",Mood Balance,UpCart Upsell,49.99,49.99,0.0,1,1,2,False
+2026-05-01,#1408,Dani Ray,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1392,Amanda Shutack,New,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,1,True
+2026-05-01,#1407,Erin Harris,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-05-01,#1320,Ashley Braa,New,['Gut Balance'],Gut Balance,Subscription,-42.49,0.0,0.0,0,0,5,False
+2026-05-01,#1405,Kristy Valenti,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1454,Erica Kaytsner,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1451,Brittany Neumann,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1405,Kristy Valenti,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1378,Carlos Flores,New,"['Gut Balance','Mood Balance']",Mood Balance,UpCart Upsell,49.99,49.99,0.0,1,1,2,False
+2026-05-01,#1403,Luciana Ransan,New,"['Gut Balance','Mood Balance']",Mood Balance,,42.5,49.99,-7.49,1,1,2,False
+2026-05-01,#1378,Carlos Flores,New,"['Gut Balance','Mood Balance']",Gut Balance,UpCart Upsell,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1393,Tiffany Golia,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1401,Torry Moncivais,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1386,Erin Fornadel,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-05-01,#1402,Lauri Dalbec,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-05-01,#1389,Eva Wang,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1409,Sadi Rioux,New,['Gut Balance'],Gut Balance,Subscription First Order,34.99,44.99,-10.0,1,1,2,False
+2026-05-01,#1400,Rachel Irizarry,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1450,Lucy Joyce,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1388,Adelina Goliszewski,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1374,Sheryll Noback,New,['Mood Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1387,CORRINA TURNAGE,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-05-01,#1398,Deanna Gehrke,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1416,Ana Karina Villasenor,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1434,Melanie Burns,New,['Gut Balance'],Gut Balance,,32.5,49.99,-17.49,1,1,1,True
+2026-05-01,#1436,Brian Nathanson,Returning,['Gut Balance'],Gut Balance,Subscription,34.99,44.99,-10.0,1,1,2,False
+2026-05-01,#1427,Joleen LaRoche,New,['Gut Balance'],Gut Balance,chatty-assisted,29.99,39.99,-10.0,1,1,3,False
+2026-05-01,#1373,Michele Burch,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1439,Victoria-Tu Ho-Vo,New,['Gut Balance'],Gut Balance,Subscription First Order,34.99,44.99,-10.0,1,1,2,False
+2026-05-01,#1431,Courtney Spencer,Returning,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-05-01,#1422,Iuliia Watson,Returning,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-05-01,#1380,Ruth Regan,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1381,Jade Williams,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1404,Victoria Fazio,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1418,Rachel Blay,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1397,Ana Liptak,Returning,"['Gut Balance','Mood Balance']",Gut Balance,Subscription First Order,44.99,44.99,0.0,1,1,4,False
+2026-05-01,#1460,Christine Sipos,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1376,Kylee Neal,New,['Gut Balance'],Gut Balance,Subscription,31.5,44.99,-13.49,1,1,2,False
+2026-05-01,#1392,Amanda Shutack,New,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,2,False
+2026-05-01,#1381,Jade Williams,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1390,Kara Reed,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1420,Sarah L Kennedy,New,['Mood Balance'],Mood Balance,Subscription First Order,29.99,39.99,-10.0,1,1,2,False
+2026-05-01,#1419,Laura Park,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1421,Meggan King,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1420,Sarah L Kennedy,New,['Mood Balance'],Mood Balance,Subscription,29.99,39.99,-10.0,1,1,1,True
+2026-05-01,#1389,Eva Wang,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1387,CORRINA TURNAGE,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1433,Deliah Taylor,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1441,Laura Shirley,New,['Gut Balance'],Gut Balance,,74.99,99.98,-24.99,2,1,1,True
+2026-05-01,#1449,Kelli Evatt,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-05-01,#1448,Cassidy Case,Returning,['Gut Balance'],Gut Balance,upsell.com,77.49,94.98,-17.49,2,1,3,False
+2026-05-01,#1377,Ann Cassidy,New,['Mood Balance'],Mood Balance,,70.0,99.98,-29.98,2,1,1,True
+2026-05-01,#1372,Philip Correale,New,['Mood Balance'],Mood Balance,Subscription First Order,31.5,44.99,-13.49,1,1,1,True
+2026-05-01,#1375,Cassidy Case,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1397,Ana Liptak,Returning,"['Gut Balance','Mood Balance']",Mood Balance,Subscription,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1417,Gail Osborn,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1455,Stephanie Carrera,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1435,Tamara Burkhart,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1398,Deanna Gehrke,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1454,Erica Kaytsner,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1410,Kay Loftin,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1396,Anna-Maryke Grey,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1415,Lisa D Prudek,New,['Mood Balance'],Mood Balance,,49.99,49.99,0.0,1,1,1,True
+2026-05-01,#1393,Tiffany Golia,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1396,Anna-Maryke Grey,New,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,2,False
+2026-05-01,#1400,Rachel Irizarry,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1374,Sheryll Noback,New,['Mood Balance'],Mood Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1408,Dani Ray,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1376,Kylee Neal,New,['Gut Balance'],Gut Balance,Subscription First Order,31.5,44.99,-13.49,1,1,1,True
+2026-05-01,#1379,Krysten Theroux,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1394,Shelly Schuster,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1456,Jennifer Hummel,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1448,Cassidy Case,Returning,['Gut Balance'],Gut Balance,Subscription,77.49,94.98,-17.49,2,1,1,True
+2026-05-01,#1433,Deliah Taylor,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1391,Carrie Stark,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1382,Christina Spevak,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1380,Ruth Regan,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1414,Nicole White,Returning,"['Gut Balance','Mood Balance']",Gut Balance,UpCart Upsell,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1320,Ashley Braa,New,['Gut Balance'],Gut Balance,chatty-assisted,-42.49,0.0,0.0,0,0,4,False
+2026-05-01,#1453,Maryna Zhaburovska,New,['Gut Balance'],Gut Balance,Subscription,34.99,44.99,-10.0,1,1,1,True
+2026-05-01,#1455,Stephanie Carrera,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,2,False
+2026-05-01,#1453,Maryna Zhaburovska,New,['Gut Balance'],Gut Balance,Subscription First Order,34.99,44.99,-10.0,1,1,2,False
+2026-05-01,#1409,Sadi Rioux,New,['Gut Balance'],Gut Balance,Subscription,34.99,44.99,-10.0,1,1,1,True
+2026-05-01,#1426,Dr. Avi Ishaaya,Returning,['Gut Balance Master Carton - 12 jars'],Gut Balance Master Carton - 12 jars,HCP,599.88,1199.76,-599.88,2,1,1,True
+2026-05-01,#1373,Michele Burch,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1395,Terra McDermott,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1385,Nadia Kluesner,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1372,Philip Correale,New,['Mood Balance'],Mood Balance,Subscription,31.5,44.99,-13.49,1,1,2,False
+2026-05-01,#1448,Cassidy Case,Returning,['Gut Balance'],Gut Balance,Subscription First Order,77.49,94.98,-17.49,2,1,2,False
+2026-05-01,#1384,Crystal Wilcox-Letosky,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1397,Ana Liptak,Returning,"['Gut Balance','Mood Balance']",Mood Balance,Subscription First Order,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1383,Lauren Preusse,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1394,Shelly Schuster,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1383,Lauren Preusse,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-05-01,#1452,Andrea Holcombe,New,['Gut Balance'],Gut Balance,,32.5,49.99,-17.49,1,1,1,True
+2026-05-01,#1449,Kelli Evatt,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,2,False
+2026-05-01,#1418,Rachel Blay,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1407,Erin Harris,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,1,True
+2026-05-01,#1388,Adelina Goliszewski,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1401,Torry Moncivais,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,1,True
+2026-05-01,#1406,Annette Neist,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,1,True
+2026-05-01,#1412,Lara Glass,Returning,['Gut Balance'],Gut Balance,,84.99,99.98,-14.99,2,1,1,True
+2026-05-01,#1379,Krysten Theroux,New,['Gut Balance'],Gut Balance,,35.0,49.99,-14.99,1,1,2,False
+2026-05-01,#1403,Luciana Ransan,New,"['Gut Balance','Mood Balance']",Gut Balance,,42.49,49.99,-7.5,1,1,1,True
+2026-05-01,#1386,Erin Fornadel,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-05-01,#1411,Laurie Rush,Returning,['Gut Balance'],Gut Balance,,49.99,49.99,0.0,1,1,1,True
+2026-05-01,#1425,Jaclyn Jones,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1457,Jacqueline Bowman,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1439,Victoria-Tu Ho-Vo,New,['Gut Balance'],Gut Balance,Subscription,34.99,44.99,-10.0,1,1,1,True
+2026-05-01,#1450,Lucy Joyce,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,1,True
+2026-05-01,#1427,Joleen LaRoche,New,['Gut Balance'],Gut Balance,Subscription,29.99,39.99,-10.0,1,1,1,True
+2026-05-01,#1428,Angela Morris,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-05-01,#1382,Christina Spevak,New,['Gut Balance'],Shipping,,5.0,0.0,0.0,0,0,2,False
+2026-06-01,#1471,Kylee Neal,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,44.99,44.99,0.0,1,1,2,False
+2026-06-01,#1466,Becky Oakes,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-06-01,#1472,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription Recurring Order,42.49,42.49,0.0,1,1,2,False
+2026-06-01,#1465,Dana Kinsey,New,['Gut Balance'],Gut Balance,Subscription,34.99,44.99,-10.0,1,1,1,True
+2026-06-01,#1471,Kylee Neal,Returning,['Gut Balance'],Gut Balance,Subscription,44.99,44.99,0.0,1,1,1,True
+2026-06-01,#1470,Anna-Maryke Grey,Returning,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-06-01,#1464,Monica Reiff,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-06-01,#1468,Kimberly A Woodford,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-06-01,#1463,Jean Martin,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
+2026-06-01,#1467,Anne McNealis,New,['Gut Balance'],Gut Balance,,32.5,49.99,-17.49,1,1,1,True
+2026-06-01,#1465,Dana Kinsey,New,['Gut Balance'],Gut Balance,Subscription First Order,34.99,44.99,-10.0,1,1,2,False
+2026-06-01,#1472,Chiquita Lemus,Returning,['Gut Balance'],Gut Balance,Subscription,42.49,42.49,0.0,1,1,1,True
+2026-06-01,#1473,Michele Tirone,New,['Gut Balance'],Gut Balance,,39.99,49.99,-10.0,1,1,1,True
