@@ -53,6 +53,14 @@ st.markdown(f"""
     </div>
     <div>{sheets_pill}{amazon_pill}</div>
   </div>
+  <div class="nav-card">
+    <div class="nav-card-title">Second<span>Kind</span> · freepl</div>
+    <div class="nav-card-desc">
+      Upload monthly Logystico 3PL invoice PDFs. Split costs into buckets — platform,
+      storage, receiving, pick &amp; pack, packaging, B2B, shipping &amp; more. Read-only.
+    </div>
+    <div><span class="pill pill-off">○ Read-only · no push</span></div>
+  </div>
 </div>
 """, unsafe_allow_html=True)
 

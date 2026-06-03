@@ -5,7 +5,9 @@ from sheets import push_amazon_to_performance_overview, get_sheets_client_status
 from brand import BRAND_CSS
 
 # ── Constants ─────────────────────────────────────────────────────────────────
-STORE_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "amazon_data.csv")
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STORE_FILE         = os.path.join(_ROOT, "amazon_data.csv")
+STORE_REFUNDS_FILE = os.path.join(_ROOT, "amazon_refunds.csv")
 
 # ASIN → product name mapping
 ASIN_MAP = {
@@ -65,9 +67,15 @@ def clean_amazon_file(raw: pd.DataFrame):
     # here but keep them OUT of active_df so pushed actuals stay shipped-paying net.
     _ret = df[(df["OrderStatus"] == "Return") & (df["IsBusinessOrder"] == False)].copy()
     _ret["product_group"] = _ret["Products"].map(ASIN_MAP)
-    _ret = _ret[_ret["product_group"].notna()]
-    log["returns_units"] = int(pd.to_numeric(_ret["NumberOfItems"], errors="coerce").fillna(0).sum())
-    log["returns_value"] = round(float(pd.to_numeric(_ret["OrderTotalAmount"], errors="coerce").fillna(0).sum()), 2)
+    _ret = _ret[_ret["product_group"].notna()].copy()
+    _ret["Order date"]   = pd.to_datetime(_ret["PurchaseDate(UTC)"], dayfirst=True, errors="coerce")
+    _ret = _ret[_ret["Order date"].notna()].copy()
+    _ret["_month_key"]   = _ret["Order date"].dt.strftime("%Y-%m-01")
+    _ret["Month"]        = _ret["Order date"].dt.strftime("%b-%Y")
+    _ret["units"]        = pd.to_numeric(_ret["NumberOfItems"], errors="coerce").fillna(0).astype(int)
+    _ret["refund_value"] = pd.to_numeric(_ret["OrderTotalAmount"], errors="coerce").fillna(0)
+    log["returns_units"] = int(_ret["units"].sum())
+    log["returns_value"] = round(float(_ret["refund_value"].sum()), 2)
 
     # Keep only Shipped orders
     df = df[df["OrderStatus"] == "Shipped"].copy()
@@ -120,12 +128,22 @@ def clean_amazon_file(raw: pd.DataFrame):
     log["vine_units"] = int(df["is_free"].sum())
     log["sns_orders"] = int((df["category"] == "Subscribe & Save").sum())
 
+    # Per-month/product refund aggregate — persisted separately, never pushed.
+    refunds_df = (
+        _ret.rename(columns={"AmazonOrderId": "Order ID"})
+            .groupby(["_month_key", "Month", "product_group"])
+            .agg(Returned_Orders=("Order ID", "nunique"),
+                 Returned_Units=("units", "sum"),
+                 Refund_Value=("refund_value", "sum"))
+            .reset_index()
+    )
+
     keep_cols = [
         "Order ID", "Order date", "_month_key", "Month",
         "Products", "product_group", "category",
         "OrderTotalAmount", "revenue", "units", "is_free", "coupon_clean",
     ]
-    return df[keep_cols].reset_index(drop=True), log
+    return df[keep_cols].reset_index(drop=True), log, refunds_df
 
 
 # ── Helper: load stored data ──────────────────────────────────────────────────
@@ -150,6 +168,22 @@ def merge_data(new: pd.DataFrame, stored) -> pd.DataFrame:
     combined     = pd.concat([stored_kept, new], ignore_index=True)
     combined     = combined.sort_values("Order date").reset_index(drop=True)
     return combined
+
+
+# ── Helper: load / merge refunds (display-only, never pushed) ─────────────────
+def load_refunds():
+    if os.path.exists(STORE_REFUNDS_FILE):
+        return pd.read_csv(STORE_REFUNDS_FILE)
+    return None
+
+
+def merge_refunds(new: pd.DataFrame, stored) -> pd.DataFrame:
+    if stored is None or stored.empty:
+        return new
+    new_months  = set(new["_month_key"].unique())
+    stored_kept = stored[~stored["_month_key"].isin(new_months)].copy()
+    return (pd.concat([stored_kept, new], ignore_index=True)
+            .sort_values("_month_key").reset_index(drop=True))
 
 
 # ── Upload section ────────────────────────────────────────────────────────────
@@ -177,15 +211,18 @@ if not uploaded:
           unsafe_allow_html=True)
         st.stop()
     else:
-        active_df = stored_df
-        log       = {}
+        active_df      = stored_df
+        active_refunds = load_refunds()
+        log            = {}
 else:
-    raw_df      = pd.read_excel(uploaded)
-    new_df, log = clean_amazon_file(raw_df)
-    active_df   = merge_data(new_df, stored_df)
+    raw_df                   = pd.read_excel(uploaded)
+    new_df, log, new_refunds = clean_amazon_file(raw_df)
+    active_df                = merge_data(new_df, stored_df)
+    active_refunds           = merge_refunds(new_refunds, load_refunds())
 
-    # Save merged data
+    # Save merged data (refunds persisted separately — never part of the push)
     active_df.to_csv(STORE_FILE, index=False)
+    active_refunds.to_csv(STORE_REFUNDS_FILE, index=False)
     if stored_df is not None:
         new_months_labels = sorted(
             pd.to_datetime(new_df["_month_key"].unique()).strftime("%b-%Y").tolist()
@@ -223,11 +260,15 @@ if log:
     pills_html += "</div>"
     st.markdown(pills_html, unsafe_allow_html=True)
 
+# Refunds (computed from returned orders; persisted separately; NEVER pushed).
+if active_refunds is not None and not active_refunds.empty:
+    r_orders = int(active_refunds["Returned_Orders"].sum())
+    r_units  = int(active_refunds["Returned_Units"].sum())
+    r_value  = float(active_refunds["Refund_Value"].sum())
     st.caption(
-        f"↩︎ Refunds (computed, **not** pushed): {log.get('returned', 0)} returned orders · "
-        f"{log.get('returns_units', 0)} units · ${log.get('returns_value', 0):,.2f}. "
-        "Seller Board books these as a separate refund line; the model push sends "
-        "shipped-paying net revenue only."
+        f"↩︎ Refunds (computed, **not** pushed): {r_orders} returned orders · "
+        f"{r_units} units · ${r_value:,.2f}. Seller Board books these as a separate "
+        "refund line; the model push sends shipped-paying net revenue only."
     )
 
 # ── KPI cards ─────────────────────────────────────────────────────────────────

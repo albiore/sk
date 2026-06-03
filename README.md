@@ -34,7 +34,7 @@ No Docker? Run directly:
 
 ```bash
 pip install -r requirements.txt
-streamlit run app.py
+streamlit run Home.py
 ```
 
 ---
@@ -101,9 +101,15 @@ Cost: ~$5/month on Railway Starter plan.
 
 ```
 secondkind-data-tool/
-├── app.py              # Streamlit UI
-├── cleaner.py          # All cleaning logic (isolated, testable)
+├── Home.py             # Multipage entry / landing + nav
+├── pages/
+│   ├── 1_Shopify.py    # Shopify sales cleaner
+│   ├── 2_Amazon.py     # Amazon orders cleaner + model push
+│   └── 3_freepl.py     # freepl P&L tool
+├── brand.py            # Shared brand/styling
+├── cleaner.py          # Shopify cleaning logic (isolated, testable)
 ├── sheets.py           # Google Sheets push
+├── freepl.py           # freepl parsing logic
 ├── requirements.txt
 ├── Dockerfile
 ├── docker-compose.yml

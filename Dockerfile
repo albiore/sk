@@ -6,10 +6,13 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy app files
-COPY app.py .
+# Copy app files (multipage app: Home.py entry + pages/)
+COPY Home.py .
+COPY brand.py .
 COPY cleaner.py .
 COPY sheets.py .
+COPY freepl.py .
+COPY pages/ ./pages/
 
 # Streamlit config
 ENV STREAMLIT_SERVER_PORT=8501
@@ -22,4 +25,4 @@ VOLUME ["/app/credentials"]
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "app.py", "--server.headless=true"]
+CMD ["streamlit", "run", "Home.py", "--server.headless=true"]
