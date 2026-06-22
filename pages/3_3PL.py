@@ -1,12 +1,15 @@
 import streamlit as st
 import pandas as pd
 import io
-from freepl import parse_invoice, summarise, BUCKETS, BUCKET_LABELS
+from freepl import (
+    parse_invoice, summarise, merge_invoices, load_invoices, save_invoices,
+    save_source_pdf, BUCKETS, BUCKET_LABELS, STORE_FILE, PDF_DIR,
+)
 from brand import BRAND_CSS
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="SecondKind · freepl",
+    page_title="SecondKind · 3PL",
     page_icon="🧬",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -18,7 +21,7 @@ st.markdown(BRAND_CSS, unsafe_allow_html=True)
 st.markdown("""
 <div class="sk-header">
   <div>
-    <div class="sk-logo">Second<span>Kind</span> · freepl</div>
+    <div class="sk-logo">Second<span>Kind</span> · 3PL</div>
     <div class="sk-subtitle">3PL Invoices · Logystico Cost Buckets</div>
   </div>
 </div>
@@ -26,7 +29,10 @@ st.markdown("""
 
 # ── Upload ────────────────────────────────────────────────────────────────────
 st.markdown('<div class="section-label">01 — Upload Monthly Invoices</div>', unsafe_allow_html=True)
-st.caption("Drop one or more Logystico invoice PDFs (one per month). Each is parsed and costs are split into buckets. Read-only — nothing is pushed anywhere.")
+st.caption("Drop one or more Logystico invoice PDFs (one per month). Each is parsed and costs are split into buckets. Parsed invoices are stored on disk, so historic months stay loaded across sessions — re-uploading a month replaces it.")
+
+# Load history from the on-disk store first.
+stored = load_invoices()
 
 files = st.file_uploader(
     "Drop invoice PDFs here",
@@ -35,21 +41,50 @@ files = st.file_uploader(
     label_visibility="collapsed",
 )
 
-if not files:
+# Parse any new uploads and merge them into the stored history.
+if files:
+    new_ok, failed = [], []
+    for f in files:
+        data = f.getvalue()
+        inv = parse_invoice(io.BytesIO(data), f.name)
+        if inv["error"]:
+            failed.append(inv)
+        else:
+            inv["pdf_path"] = save_source_pdf(inv, data)  # keep the source PDF
+            new_ok.append(inv)
+
+    for inv in failed:
+        st.error(f"Could not parse {inv['filename']}: {inv['error']}")
+
+    if new_ok:
+        stored = merge_invoices(stored, new_ok)
+        save_invoices(stored)
+        st.success(
+            f"Stored {len(new_ok)} invoice(s) (duplicates by invoice # are skipped). "
+            f"{len(stored)} invoice(s) now saved."
+        )
+
+ok = stored
+
+if not ok:
     st.markdown("""<div style="margin-top:3rem; text-align:center; color:#9C9590;
-      font-family:'DM Mono',monospace; font-size:0.8rem;">Waiting for invoice PDFs…</div>""",
+      font-family:'DM Mono',monospace; font-size:0.8rem;">Waiting for invoice PDFs…
+      <br>No history stored yet — upload a PDF to get started.</div>""",
       unsafe_allow_html=True)
     st.stop()
 
-invoices = [parse_invoice(io.BytesIO(f.getvalue()), f.name) for f in files]
-ok = [inv for inv in invoices if not inv["error"]]
-failed = [inv for inv in invoices if inv["error"]]
-
-for inv in failed:
-    st.error(f"Could not parse {inv['filename']}: {inv['error']}")
-
-if not ok:
-    st.stop()
+# Stored-data controls.
+import os as _os
+_n_pdfs = len([f for f in _os.listdir(PDF_DIR)]) if _os.path.isdir(PDF_DIR) else 0
+_n_months = len({inv["period_key"] for inv in ok})
+_meta = st.columns([3, 1])
+_meta[0].caption(
+    f"📦 {len(ok)} invoice(s) across {_n_months} month(s) in storage · "
+    f"{_n_pdfs} source PDF(s) kept · data: `{STORE_FILE}`"
+)
+if _meta[1].button("Clear stored data", use_container_width=True):
+    save_invoices([])
+    st.rerun()
 
 # ── Overview ──────────────────────────────────────────────────────────────────
 st.markdown('<div class="section-label">02 — Overview</div>', unsafe_allow_html=True)

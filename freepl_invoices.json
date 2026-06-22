@@ -1,0 +1,1251 @@
+[
+  {
+    "filename": "Inv_204009110_from_Logystico_27216.pdf",
+    "invoice_no": "204009110",
+    "invoice_date": "1/9/2026",
+    "period_key": "2025-12",
+    "period_label": "December 2025",
+    "buckets": {
+      "platform": 150.0,
+      "storage": 80.25,
+      "receiving": 50.0,
+      "pick_pack": 288.3,
+      "packaging": 80.75999999999999,
+      "b2b": 48.3,
+      "shipping": 758.3900000000001,
+      "other": 0.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 150.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day (partial month)",
+        "bucket": "storage",
+        "amount": 77.25
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 3.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 40.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 10.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 198.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 90.3
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 1.25
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 23.1
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 21.01
+      },
+      {
+        "description": "Packing Materials / Bubble Wrap",
+        "bucket": "packaging",
+        "amount": 35.4
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 48.3
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 391.85
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 92.22
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 21.72
+      },
+      {
+        "description": "UniUni - Carrier",
+        "bucket": "shipping",
+        "amount": 252.6
+      }
+    ],
+    "parsed_total": 1456.0,
+    "printed_total": 1456.0,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009110.pdf"
+  },
+  {
+    "filename": "Inv_204009197_from_Logystico_11896.pdf",
+    "invoice_no": "204009197",
+    "invoice_date": "2/2/2026",
+    "period_key": "2026-01",
+    "period_label": "January 2026",
+    "buckets": {
+      "platform": 0.0,
+      "storage": 246.0,
+      "receiving": 0.0,
+      "pick_pack": 0.0,
+      "packaging": 0.0,
+      "b2b": 0.0,
+      "shipping": 0.0,
+      "other": 0.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 0.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 246.0
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 0.0
+      }
+    ],
+    "parsed_total": 246.0,
+    "printed_total": 246.0,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009197.pdf"
+  },
+  {
+    "filename": "Inv_204009202_from_Logystico_11896.pdf",
+    "invoice_no": "204009202",
+    "invoice_date": "2/2/2026",
+    "period_key": "2026-01",
+    "period_label": "January 2026",
+    "buckets": {
+      "platform": 150.0,
+      "storage": 119.25,
+      "receiving": 0.0,
+      "pick_pack": 192.2,
+      "packaging": 43.13,
+      "b2b": 57.5,
+      "shipping": 435.44,
+      "other": 35.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 150.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 116.25
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 3.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 116.6
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 75.6
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 12.6
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 24.83
+      },
+      {
+        "description": "Packing Materials / Bubble Wrap",
+        "bucket": "packaging",
+        "amount": 5.7
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 57.5
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 35.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 95.17
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 289.7
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 43.23
+      },
+      {
+        "description": "UniUni - Carrier",
+        "bucket": "shipping",
+        "amount": 7.34
+      }
+    ],
+    "parsed_total": 1032.52,
+    "printed_total": 1032.52,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009202.pdf"
+  },
+  {
+    "filename": "Inv_204009277_from_Logystico_22744.pdf",
+    "invoice_no": "204009277",
+    "invoice_date": "3/2/2026",
+    "period_key": "2026-02",
+    "period_label": "February 2026",
+    "buckets": {
+      "platform": 0.0,
+      "storage": 246.0,
+      "receiving": 0.0,
+      "pick_pack": 0.0,
+      "packaging": 0.0,
+      "b2b": 0.0,
+      "shipping": 0.0,
+      "other": 0.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 0.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 246.0
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 0.0
+      }
+    ],
+    "parsed_total": 246.0,
+    "printed_total": 246.0,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009277.pdf"
+  },
+  {
+    "filename": "Inv_204009416_from_Logystico_37172.pdf",
+    "invoice_no": "204009416",
+    "invoice_date": "4/5/2026",
+    "period_key": "2026-03",
+    "period_label": "March 2026",
+    "buckets": {
+      "platform": 100.0,
+      "storage": 150.25,
+      "receiving": 0.0,
+      "pick_pack": 183.55,
+      "packaging": 49.95,
+      "b2b": 0.0,
+      "shipping": 566.56,
+      "other": 3.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 100.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 147.25
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 3.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 172.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 11.55
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 21.3
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 28.65
+      },
+      {
+        "description": "Packing Materials / Bubble Wrap",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 3.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 19.42
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 524.83
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "UniUni - Carrier",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - DHL",
+        "bucket": "shipping",
+        "amount": 22.31
+      }
+    ],
+    "parsed_total": 1053.31,
+    "printed_total": 1053.31,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009416.pdf"
+  },
+  {
+    "filename": "Inv_204009480_from_Logystico_386641_20576.pdf",
+    "invoice_no": "204009480",
+    "invoice_date": "5/1/2026",
+    "period_key": "2026-04",
+    "period_label": "April 2026",
+    "buckets": {
+      "platform": 100.0,
+      "storage": 150.25,
+      "receiving": 0.0,
+      "pick_pack": 126.55,
+      "packaging": 21.509999999999998,
+      "b2b": 0.0,
+      "shipping": 430.40999999999997,
+      "other": 0.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 100.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 147.25
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 3.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 122.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 4.55
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 13.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 2.4
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 1.91
+      },
+      {
+        "description": "Packing Materials / Bubble Wrap",
+        "bucket": "packaging",
+        "amount": 4.2
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 10.12
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 347.69
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 49.83
+      },
+      {
+        "description": "UniUni - Carrier",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - DHL",
+        "bucket": "shipping",
+        "amount": 22.77
+      }
+    ],
+    "parsed_total": 828.72,
+    "printed_total": 828.72,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009480.pdf"
+  },
+  {
+    "filename": "Inv_204009592_from_Logystico_393443_5792.pdf",
+    "invoice_no": "204009592",
+    "invoice_date": "6/1/2026",
+    "period_key": "2026-05",
+    "period_label": "May 2026",
+    "buckets": {
+      "platform": 100.0,
+      "storage": 150.25,
+      "receiving": 0.0,
+      "pick_pack": 221.75,
+      "packaging": 177.0,
+      "b2b": 14.95,
+      "shipping": 700.2,
+      "other": 0.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 100.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 147.25
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 3.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 178.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 43.75
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 171.9
+      },
+      {
+        "description": "Packing Materials / Bubble Wrap",
+        "bucket": "packaging",
+        "amount": 5.1
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 14.95
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 15.22
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 538.95
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 120.29
+      },
+      {
+        "description": "UniUni - Carrier",
+        "bucket": "shipping",
+        "amount": 6.38
+      },
+      {
+        "description": "Shipping - DHL",
+        "bucket": "shipping",
+        "amount": 19.36
+      }
+    ],
+    "parsed_total": 1364.15,
+    "printed_total": 1364.15,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009592.pdf"
+  },
+  {
+    "filename": "Inv_204009593_from_Logystico_393483_5792.pdf",
+    "invoice_no": "204009593",
+    "invoice_date": "6/1/2026",
+    "period_key": "2026-05",
+    "period_label": "May 2026",
+    "buckets": {
+      "platform": 0.0,
+      "storage": 246.0,
+      "receiving": 0.0,
+      "pick_pack": 0.0,
+      "packaging": 0.0,
+      "b2b": 0.0,
+      "shipping": 0.0,
+      "other": 0.0
+    },
+    "line_items": [
+      {
+        "description": "Software & Cloud Account Management and Access Fee",
+        "bucket": "platform",
+        "amount": 0.0
+      },
+      {
+        "description": "Daily Storage Fee / Pallet per day",
+        "bucket": "storage",
+        "amount": 246.0
+      },
+      {
+        "description": "Monthly Storage Fee / Bin per Month",
+        "bucket": "storage",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Pallet (Single SKU)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Master Case (not on pallet)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / SKU (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Receiving of Inventory / Unit (mixed cases)",
+        "bucket": "receiving",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Per Order",
+        "bucket": "pick_pack",
+        "amount": 0.0
+      },
+      {
+        "description": "Pick & Pack fee / Addtl Item",
+        "bucket": "pick_pack",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #0",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Bubble Mailer #2",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "Packing Materials / Box",
+        "bucket": "packaging",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Pallet (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "B2B Fee / Per Master Case (Single SKU, no breakdown)",
+        "bucket": "b2b",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Package",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Accepting Returns / Addtl Item",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Product Labeling / Minimum 100 labels per SKU (Price is per label)",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Palletization Fee - 40x48, including shrink wrap",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shrink Wrap - Pallet",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "BOL Fee",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Take a Photo - picture",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Hourly Work - $45/hr",
+        "bucket": "other",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - UPS",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - USPS",
+        "bucket": "shipping",
+        "amount": 0.0
+      },
+      {
+        "description": "Shipping - FEDEX",
+        "bucket": "shipping",
+        "amount": 0.0
+      }
+    ],
+    "parsed_total": 246.0,
+    "printed_total": 246.0,
+    "error": null,
+    "pdf_path": "/Users/albertoiore/Projects/sk/freepl_pdfs/204009593.pdf"
+  }
+]

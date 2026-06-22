@@ -12,8 +12,17 @@ Column layout in the Logystico template (x-coordinates, points):
 """
 
 import io
+import os
+import json
 import re
 from typing import List, Dict, Any
+
+# ── Persistent store ──────────────────────────────────────────────────────────
+# Parsed invoices are saved here so historic data survives across sessions
+# (the page reads this on load instead of requiring a re-upload every time).
+STORE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "freepl_invoices.json")
+# Original source PDFs are kept here, named by invoice number.
+PDF_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "freepl_pdfs")
 
 # ── Cost buckets (display order) ──────────────────────────────────────────────
 BUCKETS = [
@@ -199,18 +208,80 @@ def parse_invoice(file: io.BytesIO, filename: str = "") -> Dict[str, Any]:
     return result
 
 
+def _store_key(inv: Dict[str, Any]) -> str:
+    """Unique key for dedup. Use the invoice number — the true identity — so that
+    re-uploaded file copies collapse, but two DIFFERENT invoices in the same
+    month are both kept. Fall back to period, then filename."""
+    ino = inv.get("invoice_no")
+    if ino:
+        return f"inv:{ino}"
+    pk = inv.get("period_key")
+    if pk and pk != "unknown":
+        return f"period:{pk}"
+    return f"file:{inv.get('filename', '')}"
+
+
+def save_source_pdf(inv: Dict[str, Any], data: bytes) -> str:
+    """Persist the original PDF bytes, named by invoice number. Returns the path."""
+    os.makedirs(PDF_DIR, exist_ok=True)
+    key = inv.get("invoice_no") or os.path.splitext(inv.get("filename", ""))[0] or "unknown"
+    path = os.path.join(PDF_DIR, f"{key}.pdf")
+    with open(path, "wb") as f:
+        f.write(data)
+    return path
+
+
+def load_invoices() -> List[Dict[str, Any]]:
+    """Load previously parsed invoices from the on-disk store (empty if none)."""
+    if not os.path.exists(STORE_FILE):
+        return []
+    try:
+        with open(STORE_FILE) as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else []
+    except (json.JSONDecodeError, OSError):
+        return []
+
+
+def save_invoices(invoices: List[Dict[str, Any]]) -> None:
+    """Persist the full invoice list to disk."""
+    with open(STORE_FILE, "w") as f:
+        json.dump(invoices, f, indent=2)
+
+
+def merge_invoices(
+    existing: List[Dict[str, Any]], new: List[Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """Merge new invoices into existing, keyed by month — a re-uploaded month
+    replaces the stored one. Returns the combined list sorted by period."""
+    by_key = {_store_key(inv): inv for inv in existing}
+    for inv in new:
+        by_key[_store_key(inv)] = inv
+    return sorted(by_key.values(), key=lambda i: i.get("period_key", ""))
+
+
 def summarise(invoices: List[Dict[str, Any]]) -> "list[dict]":
-    """One row per month: period + each bucket + total. Sorted by period key."""
-    rows = []
+    """One row per month: period + each bucket + total, summing all invoices that
+    fall in the same month. Sorted by period key."""
+    by_period: Dict[str, dict] = {}
     for inv in invoices:
         if inv.get("error"):
             continue
-        row = {"Period": inv["period_label"], "_key": inv["period_key"]}
+        pk = inv["period_key"]
+        if pk not in by_period:
+            agg = {"Period": inv["period_label"], "_key": pk}
+            for b in BUCKETS:
+                agg[BUCKET_LABELS[b]] = 0.0
+            agg["Total"] = 0.0
+            by_period[pk] = agg
+        agg = by_period[pk]
         for b in BUCKETS:
-            row[BUCKET_LABELS[b]] = round(inv["buckets"][b], 2)
-        row["Total"] = round(inv["parsed_total"], 2)
-        rows.append(row)
-    rows.sort(key=lambda r: r["_key"])
+            agg[BUCKET_LABELS[b]] += inv["buckets"][b]
+        agg["Total"] += inv["parsed_total"]
+    rows = sorted(by_period.values(), key=lambda r: r["_key"])
     for r in rows:
+        for b in BUCKETS:
+            r[BUCKET_LABELS[b]] = round(r[BUCKET_LABELS[b]], 2)
+        r["Total"] = round(r["Total"], 2)
         r.pop("_key", None)
     return rows
