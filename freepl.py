@@ -285,3 +285,71 @@ def summarise(invoices: List[Dict[str, Any]]) -> "list[dict]":
         r["Total"] = round(r["Total"], 2)
         r.pop("_key", None)
     return rows
+
+
+# ── Push to Google Sheet: "Expenses Actuals_new" tab ────────────────────────────
+# Target: the SAME SK Business Tracker spreadsheet that holds "Performance Ov"
+# (where Shopify/Amazon push), just a different tab — so the service account
+# already has access. Month columns start at C (Jul-2025) … N (Jun-2026) — note
+# this tab starts at C, not B. 3PL bucket rows 35-42; row 43 is a formula total.
+EXPENSES_TAB = "Expenses Actuals_new"
+
+_3PL_MONTH_TO_COL = {
+    "2025-07": "C", "2025-08": "D", "2025-09": "E", "2025-10": "F",
+    "2025-11": "G", "2025-12": "H", "2026-01": "I", "2026-02": "J",
+    "2026-03": "K", "2026-04": "L", "2026-05": "M", "2026-06": "N",
+}
+
+# bucket key → sheet row (order matches the sheet's row labels 35-42)
+_3PL_BUCKET_ROWS = {
+    "platform":  35, "storage":   36, "receiving": 37, "pick_pack": 38,
+    "packaging": 39, "b2b":       40, "shipping":  41, "other":     42,
+}
+
+
+def push_3pl_to_expenses(invoices: List[Dict[str, Any]], sheet_url: str) -> Dict[str, Any]:
+    """
+    Write monthly 3PL bucket costs into the 'Expenses Actuals_new' tab (rows 35-42).
+    Aggregates all invoices in the same month (a month can hold several invoices).
+    Months outside the Jul-2025–Jun-2026 window are skipped.
+    """
+    try:
+        import gspread
+        from sheets import _get_credentials, _extract_sheet_id
+
+        creds = _get_credentials()
+        client = gspread.authorize(creds)
+        worksheet = client.open_by_key(_extract_sheet_id(sheet_url)).worksheet(EXPENSES_TAB)
+
+        # Aggregate buckets per month.
+        by_month: Dict[str, Dict[str, float]] = {}
+        skipped = []
+        for inv in invoices:
+            if inv.get("error"):
+                continue
+            pk = inv.get("period_key")
+            if pk not in _3PL_MONTH_TO_COL:
+                skipped.append(pk)
+                continue
+            agg = by_month.setdefault(pk, {b: 0.0 for b in BUCKETS})
+            for b in BUCKETS:
+                agg[b] += inv["buckets"].get(b, 0.0)
+
+        if not by_month:
+            return {"ok": False, "cells": 0, "months": 0,
+                    "error": "No invoices fall in the Jul-2025–Jun-2026 window."}
+
+        updates = []
+        for pk, agg in by_month.items():
+            col = _3PL_MONTH_TO_COL[pk]
+            for b in BUCKETS:
+                updates.append({
+                    "range": f"{col}{_3PL_BUCKET_ROWS[b]}",
+                    "values": [[round(agg[b], 2)]],
+                })
+
+        worksheet.batch_update(updates, value_input_option="USER_ENTERED")
+        return {"ok": True, "cells": len(updates), "months": len(by_month), "error": None}
+
+    except Exception as e:
+        return {"ok": False, "cells": 0, "months": 0, "error": str(e)}

@@ -3,8 +3,9 @@ import pandas as pd
 import io
 from freepl import (
     parse_invoice, summarise, merge_invoices, load_invoices, save_invoices,
-    save_source_pdf, BUCKETS, BUCKET_LABELS, STORE_FILE, PDF_DIR,
+    save_source_pdf, push_3pl_to_expenses, BUCKETS, BUCKET_LABELS, STORE_FILE, PDF_DIR,
 )
+from sheets import get_sheets_client_status
 from brand import BRAND_CSS
 
 # ── Page config ───────────────────────────────────────────────────────────────
@@ -150,3 +151,26 @@ for inv in sorted(ok, key=lambda i: i["period_key"]):
             st.dataframe(lines_df, width="stretch", hide_index=True)
         printed_str = f"${printed:,.2f}" if printed is not None else "—"
         st.caption(f"Invoice date {inv['invoice_date']} · printed total {printed_str} · parsed total ${inv['parsed_total']:,.2f}")
+
+# ── Push to Google Sheet ──────────────────────────────────────────────────────
+st.markdown('<div class="section-label">05 — Push to Business Tracker</div>', unsafe_allow_html=True)
+st.caption("Writes monthly bucket costs to the 'Expenses Actuals_new' tab, rows 35-42 (Platform→Everything Else), by month. Multiple invoices in a month are summed.")
+
+if get_sheets_client_status() != "ready":
+    st.warning("No Google credentials found — add credentials.json to enable pushing.")
+else:
+    exp_url = st.text_input(
+        "Expenses Sheet URL",
+        value="https://docs.google.com/spreadsheets/d/1I4QpO9pYQYQpPOSaEQIHeP91N2xJ0nLWT8bcoFEy1Ts/edit",
+        key="expenses_sheet_url",
+    )
+    if st.button("Push 3PL costs → Expenses Actuals_new"):
+        if exp_url:
+            with st.spinner("Writing to Expenses Actuals_new…"):
+                result = push_3pl_to_expenses(ok, exp_url)
+            if result["ok"]:
+                st.success(f"✓ {result['cells']} cells updated across {result['months']} month(s) in 'Expenses Actuals_new'")
+            else:
+                st.error(f"Error: {result['error']}")
+        else:
+            st.warning("Paste the Sheet URL first.")
