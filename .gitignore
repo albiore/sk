@@ -1,7 +1,9 @@
 credentials.json
 *.json
 !requirements*.json
+!freepl_invoices.json
 __pycache__/
 *.pyc
 .env
 .DS_Store
+.claude/
