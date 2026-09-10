@@ -63,13 +63,25 @@ def _extract_sheet_id(url: str) -> str:
     return match.group(1)
 
 
-# Fiscal year column map: CSV month key → sheet column letter (Jul-2025 to Jun-2026)
-_MONTH_TO_COL: Dict[str, str] = {
-    "2025-07-01": "B", "2025-08-01": "C", "2025-09-01": "D",
-    "2025-10-01": "E", "2025-11-01": "F", "2025-12-01": "G",
-    "2026-01-01": "H", "2026-02-01": "I", "2026-03-01": "J",
-    "2026-04-01": "K", "2026-05-01": "L", "2026-06-01": "M",
-}
+def _month_to_col(month_key: str):
+    """
+    Convert a YYYY-MM-01 month key to its sheet column letter.
+    Column B = Jul-2025 (month 0); each subsequent month is one column right.
+    Handles single-letter (B-Z) and double-letter (AA, AB…) columns automatically.
+    Returns None for months before Jul-2025.
+    """
+    from datetime import datetime
+    dt     = datetime.strptime(month_key, "%Y-%m-01")
+    origin = datetime(2025, 7, 1)
+    offset = (dt.year - origin.year) * 12 + (dt.month - origin.month)
+    if offset < 0:
+        return None
+    # 1-based column number: B=2, C=3, … so add 2
+    n, result = offset + 2, ""
+    while n > 0:
+        n, r = divmod(n - 1, 26)
+        result = chr(ord("A") + r) + result
+    return result
 
 # Target rows in "Performance Ov" tab
 # (shifted after Shipping Revenue lines were inserted at OKR 9 / ACTUALS 15 / ATTAINMENT 21)
@@ -101,7 +113,10 @@ def push_to_performance_overview(df: pd.DataFrame, sheet_url: str) -> Dict[str, 
         ship_mask = df["Product title"] == "Shipping"
 
         updates = []
-        for month_key, col in _MONTH_TO_COL.items():
+        for month_key in sorted(df["_month_key"].unique()):
+            col = _month_to_col(month_key)
+            if col is None:
+                continue
             m = df["_month_key"] == month_key
             for label, mask in [("gut", gut_mask), ("mood", mood_mask)]:
                 sub = df[m & mask]
@@ -223,7 +238,10 @@ def push_amazon_to_performance_overview(df: pd.DataFrame, sheet_url: str) -> Dic
         worksheet = client.open_by_key(_extract_sheet_id(sheet_url)).worksheet("Performance Ov")
 
         updates = []
-        for month_key, col in _MONTH_TO_COL.items():
+        for month_key in df["_month_key"].unique():
+            col = _month_to_col(month_key)
+            if col is None:
+                continue
             m = df["_month_key"] == month_key
             for label, product in [("gut", "Gut Balance"), ("mood", "Mood Balance")]:
                 sub = df[m & (df["product_group"] == product)]

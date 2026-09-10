@@ -3,11 +3,7 @@ import pandas as pd
 import os
 from sheets import push_amazon_to_performance_overview, get_sheets_client_status
 from brand import BRAND_CSS
-
-# ── Constants ─────────────────────────────────────────────────────────────────
-_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STORE_FILE         = os.path.join(_ROOT, "amazon_data.csv")
-STORE_REFUNDS_FILE = os.path.join(_ROOT, "amazon_refunds.csv")
+import storage
 
 # ASIN → product name mapping
 ASIN_MAP = {
@@ -148,13 +144,10 @@ def clean_amazon_file(raw: pd.DataFrame):
 
 # ── Helper: load stored data ──────────────────────────────────────────────────
 def load_stored():
-    if os.path.exists(STORE_FILE):
-        df = pd.read_csv(STORE_FILE, parse_dates=["Order date"])
-        # Restore bool column
-        if "is_free" in df.columns:
-            df["is_free"] = df["is_free"].astype(bool)
-        return df
-    return None
+    df = storage.download_df("amazon_data.csv", parse_dates=["Order date"])
+    if df is not None and "is_free" in df.columns:
+        df["is_free"] = df["is_free"].astype(bool)
+    return df
 
 
 # ── Helper: merge new + stored with month-level override ─────────────────────
@@ -172,9 +165,7 @@ def merge_data(new: pd.DataFrame, stored) -> pd.DataFrame:
 
 # ── Helper: load / merge refunds (display-only, never pushed) ─────────────────
 def load_refunds():
-    if os.path.exists(STORE_REFUNDS_FILE):
-        return pd.read_csv(STORE_REFUNDS_FILE)
-    return None
+    return storage.download_df("amazon_refunds.csv")
 
 
 def merge_refunds(new: pd.DataFrame, stored) -> pd.DataFrame:
@@ -221,8 +212,8 @@ else:
     active_refunds           = merge_refunds(new_refunds, load_refunds())
 
     # Save merged data (refunds persisted separately — never part of the push)
-    active_df.to_csv(STORE_FILE, index=False)
-    active_refunds.to_csv(STORE_REFUNDS_FILE, index=False)
+    storage.upload_df("amazon_data.csv", active_df)
+    storage.upload_df("amazon_refunds.csv", active_refunds)
     if stored_df is not None:
         new_months_labels = sorted(
             pd.to_datetime(new_df["_month_key"].unique()).strftime("%b-%Y").tolist()

@@ -30,7 +30,7 @@ st.markdown("""
 
 # ── Upload ────────────────────────────────────────────────────────────────────
 st.markdown('<div class="section-label">01 — Upload Monthly Invoices</div>', unsafe_allow_html=True)
-st.caption("Drop one or more Logystico invoice PDFs (one per month). Each is parsed and costs are split into buckets. Parsed invoices are stored on disk, so historic months stay loaded across sessions — re-uploading a month replaces it.")
+st.caption("Drop one or more Logystico invoice PDFs (one per month). Each is parsed and costs are split into buckets. All invoices are stored in the cloud — historic months stay loaded across sessions and re-uploading a month replaces it.")
 
 # Load history from the on-disk store first.
 stored = load_invoices()
