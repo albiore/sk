@@ -290,15 +290,38 @@ def summarise(invoices: List[Dict[str, Any]]) -> "list[dict]":
 # ── Push to Google Sheet: "Expenses Actuals_new" tab ────────────────────────────
 # Target: the SAME SK Business Tracker spreadsheet that holds "Performance Ov"
 # (where Shopify/Amazon push), just a different tab — so the service account
-# already has access. Month columns start at C (Jul-2025) … N (Jun-2026) — note
-# this tab starts at C, not B. 3PL bucket rows 35-42; row 43 is a formula total.
+# already has access. Month columns start at C (Jul-2025) and continue monthly —
+# note this tab starts at C, not B. 3PL bucket rows 35-42; row 43 is a formula total.
 EXPENSES_TAB = "Expenses Actuals_new"
 
-_3PL_MONTH_TO_COL = {
-    "2025-07": "C", "2025-08": "D", "2025-09": "E", "2025-10": "F",
-    "2025-11": "G", "2025-12": "H", "2026-01": "I", "2026-02": "J",
-    "2026-03": "K", "2026-04": "L", "2026-05": "M", "2026-06": "N",
-}
+# First month column: Jul-2025 = column C. Later months are computed relative
+# to this instead of a fixed lookup table, so the mapping never runs out.
+_3PL_FIRST_PERIOD = (2025, 7)
+_3PL_FIRST_COL_INDEX = 3  # column C
+
+
+def _col_index_to_letter(index: int) -> str:
+    """1-based column index -> spreadsheet column letters (1=A, 27=AA, ...)."""
+    letters = ""
+    while index > 0:
+        index, remainder = divmod(index - 1, 26)
+        letters = chr(65 + remainder) + letters
+    return letters
+
+
+def _col_for_period(period_key: str) -> str | None:
+    """Map a 'YYYY-MM' period key to its sheet column, relative to Jul-2025 = C.
+    Returns None for periods before Jul-2025 or malformed keys."""
+    try:
+        year, month = (int(part) for part in period_key.split("-"))
+    except (ValueError, AttributeError):
+        return None
+    first_year, first_month = _3PL_FIRST_PERIOD
+    months_since_first = (year - first_year) * 12 + (month - first_month)
+    if months_since_first < 0:
+        return None
+    return _col_index_to_letter(_3PL_FIRST_COL_INDEX + months_since_first)
+
 
 # bucket key → sheet row (order matches the sheet's row labels 35-42)
 _3PL_BUCKET_ROWS = {
@@ -311,7 +334,8 @@ def push_3pl_to_expenses(invoices: List[Dict[str, Any]], sheet_url: str) -> Dict
     """
     Write monthly 3PL bucket costs into the 'Expenses Actuals_new' tab (rows 35-42).
     Aggregates all invoices in the same month (a month can hold several invoices).
-    Months outside the Jul-2025–Jun-2026 window are skipped.
+    Months before Jul-2025 or with an unrecognised period are skipped and
+    reported back in "skipped" rather than silently dropped.
     """
     try:
         import gspread
@@ -328,7 +352,7 @@ def push_3pl_to_expenses(invoices: List[Dict[str, Any]], sheet_url: str) -> Dict
             if inv.get("error"):
                 continue
             pk = inv.get("period_key")
-            if pk not in _3PL_MONTH_TO_COL:
+            if _col_for_period(pk) is None:
                 skipped.append(pk)
                 continue
             agg = by_month.setdefault(pk, {b: 0.0 for b in BUCKETS})
@@ -336,12 +360,12 @@ def push_3pl_to_expenses(invoices: List[Dict[str, Any]], sheet_url: str) -> Dict
                 agg[b] += inv["buckets"].get(b, 0.0)
 
         if not by_month:
-            return {"ok": False, "cells": 0, "months": 0,
-                    "error": "No invoices fall in the Jul-2025–Jun-2026 window."}
+            return {"ok": False, "cells": 0, "months": 0, "skipped": skipped,
+                    "error": "No invoices fall on or after Jul-2025."}
 
         updates = []
         for pk, agg in by_month.items():
-            col = _3PL_MONTH_TO_COL[pk]
+            col = _col_for_period(pk)
             for b in BUCKETS:
                 updates.append({
                     "range": f"{col}{_3PL_BUCKET_ROWS[b]}",
@@ -349,7 +373,8 @@ def push_3pl_to_expenses(invoices: List[Dict[str, Any]], sheet_url: str) -> Dict
                 })
 
         worksheet.batch_update(updates, value_input_option="USER_ENTERED")
-        return {"ok": True, "cells": len(updates), "months": len(by_month), "error": None}
+        return {"ok": True, "cells": len(updates), "months": len(by_month),
+                "skipped": skipped, "error": None}
 
     except Exception as e:
-        return {"ok": False, "cells": 0, "months": 0, "error": str(e)}
+        return {"ok": False, "cells": 0, "months": 0, "skipped": [], "error": str(e)}

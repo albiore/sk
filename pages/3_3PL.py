@@ -170,7 +170,11 @@ else:
                 result = push_3pl_to_expenses(ok, exp_url)
             if result["ok"]:
                 st.success(f"✓ {result['cells']} cells updated across {result['months']} month(s) in 'Expenses Actuals_new'")
+                if result.get("skipped"):
+                    st.warning(f"Skipped (before Jul-2025 or unrecognised period): {', '.join(result['skipped'])}")
             else:
                 st.error(f"Error: {result['error']}")
+                if result.get("skipped"):
+                    st.warning(f"Skipped (before Jul-2025 or unrecognised period): {', '.join(result['skipped'])}")
         else:
             st.warning("Paste the Sheet URL first.")
