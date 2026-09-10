@@ -15,7 +15,7 @@ import io
 import os
 import json
 import re
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 # ── Persistent store ──────────────────────────────────────────────────────────
 # Parsed invoices are saved here so historic data survives across sessions
@@ -309,7 +309,7 @@ def _col_index_to_letter(index: int) -> str:
     return letters
 
 
-def _col_for_period(period_key: str) -> str | None:
+def _col_for_period(period_key: str) -> Optional[str]:
     """Map a 'YYYY-MM' period key to its sheet column, relative to Jul-2025 = C.
     Returns None for periods before Jul-2025 or malformed keys."""
     try:
