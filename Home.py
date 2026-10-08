@@ -224,43 +224,48 @@ if _ov_cons is not None and not _ov_cons.empty:
         _amz_units = _amz_g.groupby("_mdt")["units"].sum()
 
     _ov_rows = []
-    _tot_net = _tot_b2b_net = _tot_fu = _tot_cu = _tot_gross_c = _tot_b2b_gs = _tot_amz_u = _tot_ec = 0.0
+    _tot_net = _tot_b2b_net = _tot_fu = _tot_cu = _tot_gross_c = _tot_b2b_gs = _tot_amz_u = _tot_ec = _tot_ec_b2b = 0.0
     for _m in sorted(_ov_cons["_mdt"].unique()):
         _net     = _cons_net.get(_m, 0.0)
         _b2b_r   = _b2b_rev.get(_m, 0.0)
         _fu_u    = int(_fu_units.get(_m, 0))
         _cu      = int(_cons_units.get(_m, 0))
-        _gross_c = _cu * _FULL_PRICE
-        _amz_u   = int(_amz_units.get(_m, 0))
-        _ec      = _gross_c + _b2b_r + _amz_u * _FULL_PRICE
+        _gross_c   = _cu * _FULL_PRICE
+        _amz_u     = int(_amz_units.get(_m, 0))
+        _ec_amz    = _gross_c + _amz_u * _FULL_PRICE
+        _ec_amz_b2b = _ec_amz + _b2b_r
         _ov_rows.append({
-            "Month":                      pd.Timestamp(_m).strftime("%B %Y"),
-            "Net Revenue":                f"${_net:,.0f}",
-            "B2B Revenue":                f"${_b2b_r:,.0f}" if _b2b_r else "—",
-            "eCom + B2B Net Revenue":     f"${_net + _b2b_r:,.0f}",
-            "Free Units":                 _fu_u or "—",
-            "Total Units Consumer":       _cu,
-            "Gross Sales Consumers":      f"${_gross_c:,.0f}",
-            "eCom + B2B Gross Sales":     f"${_gross_c + _b2b_r:,.0f}",
-            "Amazon Units":               _amz_u or "—",
-            "Total Gross Sales eCom+AMZ": f"${_ec:,.0f}",
+            "Month":                          pd.Timestamp(_m).strftime("%B %Y"),
+            "Net Revenue":                    f"${_net:,.0f}",
+            "B2B Revenue":                    f"${_b2b_r:,.0f}" if _b2b_r else "—",
+            "eCom + B2B Net Revenue":         f"${_net + _b2b_r:,.0f}",
+            "Free Units":                     _fu_u or "—",
+            "Total Units Consumer":           _cu,
+            "Gross Sales Consumers":          f"${_gross_c:,.0f}",
+            "eCom + B2B Gross Sales":         f"${_gross_c + _b2b_r:,.0f}",
+            "Amazon Units":                   _amz_u or "—",
+            "Total Gross Sales eCom+AMZ":     f"${_ec_amz:,.0f}",
+            "Gross Revenue eCom+AMZ+B2B":     f"${_ec_amz_b2b:,.0f}",
         })
-        _tot_net    += _net;  _tot_b2b_net += _net + _b2b_r
-        _tot_fu     += _fu_u; _tot_cu      += _cu
-        _tot_gross_c += _gross_c; _tot_b2b_gs += _gross_c + _b2b_r
-        _tot_amz_u  += _amz_u;   _tot_ec     += _ec; _tot_b2b_r = _tot_b2b_net - _tot_net
+        _tot_net     += _net;      _tot_b2b_net  += _net + _b2b_r
+        _tot_fu      += _fu_u;     _tot_cu       += _cu
+        _tot_gross_c += _gross_c;  _tot_b2b_gs   += _gross_c + _b2b_r
+        _tot_amz_u   += _amz_u;    _tot_ec       += _ec_amz
+        _tot_ec_b2b  += _ec_amz_b2b
+        _tot_b2b_r    = _tot_b2b_net - _tot_net
 
     _ov_rows.append({
-        "Month":                      "TOTAL",
-        "Net Revenue":                f"${_tot_net:,.0f}",
-        "B2B Revenue":                f"${_tot_b2b_r:,.0f}" if _tot_b2b_r else "—",
-        "eCom + B2B Net Revenue":     f"${_tot_b2b_net:,.0f}",
-        "Free Units":                 int(_tot_fu) or "—",
-        "Total Units Consumer":       int(_tot_cu),
-        "Gross Sales Consumers":      f"${_tot_gross_c:,.0f}",
-        "eCom + B2B Gross Sales":     f"${_tot_b2b_gs:,.0f}",
-        "Amazon Units":               int(_tot_amz_u) or "—",
-        "Total Gross Sales eCom+AMZ": f"${_tot_ec:,.0f}",
+        "Month":                          "TOTAL",
+        "Net Revenue":                    f"${_tot_net:,.0f}",
+        "B2B Revenue":                    f"${_tot_b2b_r:,.0f}" if _tot_b2b_r else "—",
+        "eCom + B2B Net Revenue":         f"${_tot_b2b_net:,.0f}",
+        "Free Units":                     int(_tot_fu) or "—",
+        "Total Units Consumer":           int(_tot_cu),
+        "Gross Sales Consumers":          f"${_tot_gross_c:,.0f}",
+        "eCom + B2B Gross Sales":         f"${_tot_b2b_gs:,.0f}",
+        "Amazon Units":                   int(_tot_amz_u) or "—",
+        "Total Gross Sales eCom+AMZ":     f"${_tot_ec:,.0f}",
+        "Gross Revenue eCom+AMZ+B2B":     f"${_tot_ec_b2b:,.0f}",
     })
     st.dataframe(pd.DataFrame(_ov_rows), use_container_width=True, hide_index=True)
     if _ov_b2b is None or _ov_b2b.empty:
