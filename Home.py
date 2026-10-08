@@ -224,6 +224,7 @@ if _ov_cons is not None and not _ov_cons.empty:
         _amz_units = _amz_g.groupby("_mdt")["units"].sum()
 
     _ov_rows = []
+    _tot_net = _tot_b2b_net = _tot_fu = _tot_cu = _tot_gross_c = _tot_b2b_gs = _tot_amz_u = _tot_ec = 0.0
     for _m in sorted(_ov_cons["_mdt"].unique()):
         _net     = _cons_net.get(_m, 0.0)
         _b2b_r   = _b2b_rev.get(_m, 0.0)
@@ -231,6 +232,7 @@ if _ov_cons is not None and not _ov_cons.empty:
         _cu      = int(_cons_units.get(_m, 0))
         _gross_c = _cu * _FULL_PRICE
         _amz_u   = int(_amz_units.get(_m, 0))
+        _ec      = _gross_c + _b2b_r + _amz_u * _FULL_PRICE
         _ov_rows.append({
             "Month":                      pd.Timestamp(_m).strftime("%B %Y"),
             "Net Revenue":                f"${_net:,.0f}",
@@ -240,8 +242,24 @@ if _ov_cons is not None and not _ov_cons.empty:
             "Gross Sales Consumers":      f"${_gross_c:,.0f}",
             "eCom + B2B Gross Sales":     f"${_gross_c + _b2b_r:,.0f}",
             "Amazon Units":               _amz_u or "—",
-            "Total Gross Sales eCom+AMZ": f"${_gross_c + _b2b_r + _amz_u * _FULL_PRICE:,.0f}",
+            "Total Gross Sales eCom+AMZ": f"${_ec:,.0f}",
         })
+        _tot_net    += _net;  _tot_b2b_net += _net + _b2b_r
+        _tot_fu     += _fu_u; _tot_cu      += _cu
+        _tot_gross_c += _gross_c; _tot_b2b_gs += _gross_c + _b2b_r
+        _tot_amz_u  += _amz_u;   _tot_ec     += _ec
+
+    _ov_rows.append({
+        "Month":                      "TOTAL",
+        "Net Revenue":                f"${_tot_net:,.0f}",
+        "eCom + B2B Net Revenue":     f"${_tot_b2b_net:,.0f}",
+        "Free Units":                 int(_tot_fu) or "—",
+        "Total Units Consumer":       int(_tot_cu),
+        "Gross Sales Consumers":      f"${_tot_gross_c:,.0f}",
+        "eCom + B2B Gross Sales":     f"${_tot_b2b_gs:,.0f}",
+        "Amazon Units":               int(_tot_amz_u) or "—",
+        "Total Gross Sales eCom+AMZ": f"${_tot_ec:,.0f}",
+    })
     st.dataframe(pd.DataFrame(_ov_rows), use_container_width=True, hide_index=True)
     if _ov_b2b is None or _ov_b2b.empty:
         st.caption(
