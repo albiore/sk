@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import io
 from cleaner import clean_dataframe, CLEANING_STEPS
-from sheets import push_to_sheets, get_sheets_client_status
+from sheets import push_to_sheets, push_to_performance_overview, get_sheets_client_status
 
 # ── Page config ──────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -235,18 +235,32 @@ with col2:
     sheets_status = get_sheets_client_status()
     if sheets_status == "ready":
         sheet_url = st.text_input(
-            "Google Sheet URL (paste target sheet)",
+            "Google Sheet URL",
             placeholder="https://docs.google.com/spreadsheets/d/…",
+            key="sheet_url_raw",
         )
-        if st.button("Push to Google Sheets"):
-            if sheet_url:
-                with st.spinner("Writing to Sheets…"):
-                    result = push_to_sheets(cleaned_df, sheet_url)
-                if result["ok"]:
-                    st.success(f"✓ Written {result['rows']} rows to '{result['sheet']}'")
+        col2a, col2b = st.columns(2)
+        with col2a:
+            if st.button("Push raw dump → Cleaned Data tab"):
+                if sheet_url:
+                    with st.spinner("Writing to Sheets…"):
+                        result = push_to_sheets(cleaned_df, sheet_url)
+                    if result["ok"]:
+                        st.success(f"✓ {result['rows']} rows → '{result['sheet']}'")
+                    else:
+                        st.error(f"Error: {result['error']}")
                 else:
-                    st.error(f"Error: {result['error']}")
-            else:
-                st.warning("Paste a Google Sheet URL first.")
+                    st.warning("Paste a Sheet URL first.")
+        with col2b:
+            if st.button("Push actuals → Performance Ov"):
+                if sheet_url:
+                    with st.spinner("Writing to Performance Ov…"):
+                        result = push_to_performance_overview(cleaned_df, sheet_url)
+                    if result["ok"]:
+                        st.success(f"✓ {result['cells']} cells updated in 'Performance Ov'")
+                    else:
+                        st.error(f"Error: {result['error']}")
+                else:
+                    st.warning("Paste a Sheet URL first.")
     else:
         st.info(f"Google Sheets: {sheets_status}. Add credentials.json to enable.")
