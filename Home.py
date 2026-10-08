@@ -3,6 +3,7 @@ import pandas as pd
 import os
 from sheets import get_sheets_client_status
 from brand import BRAND_CSS
+import storage
 
 _ROOT = os.path.dirname(os.path.abspath(__file__))
 SHOPIFY_FILE = os.path.join(_ROOT, "shopify_data.csv")
@@ -178,6 +179,77 @@ else:
         columns={"sk_revenue": "Shopify", "amz_revenue": "Amazon"}
     )
     st.bar_chart(chart, width="stretch")
+
+# ── Revenue & Units Overview ──────────────────────────────────────────────────
+st.markdown("<hr>", unsafe_allow_html=True)
+st.markdown('<div class="section-label">Revenue &amp; Units Overview</div>', unsafe_allow_html=True)
+st.caption(
+    "Shopify consumer (Net Revenue) vs. consumer + B2B doctors orders, "
+    "free partner units, gross sales at list price ($44.99/unit), and Amazon paid units."
+)
+
+_FULL_PRICE = 44.99
+
+_ov_cons = storage.download_df("shopify_data.csv")
+_ov_b2b  = storage.download_df("shopify_b2b_data.csv")
+_ov_fu   = storage.download_df("shopify_free_units.csv")
+_ov_amz  = storage.download_df("amazon_data.csv")
+
+if _ov_cons is not None and not _ov_cons.empty:
+    _ov_cons["_mdt"]   = pd.to_datetime(_ov_cons["Month"])
+    _ov_cons["_total"] = pd.to_numeric(_ov_cons["Total sales"],      errors="coerce").fillna(0)
+    _ov_cons["_qty"]   = pd.to_numeric(_ov_cons["Quantity ordered"], errors="coerce").fillna(0)
+    _prod_rows  = _ov_cons["Product title"] != "Shipping"
+    _cons_net   = _ov_cons.groupby("_mdt")["_total"].sum()
+    _cons_units = _ov_cons[_prod_rows].groupby("_mdt")["_qty"].sum()
+
+    _b2b_rev = pd.Series(dtype=float)
+    if _ov_b2b is not None and not _ov_b2b.empty:
+        _b2b_g = _ov_b2b.copy()
+        _b2b_g["_mdt"]   = pd.to_datetime(_b2b_g["Month"])
+        _b2b_g["_total"] = pd.to_numeric(_b2b_g["Total sales"], errors="coerce").fillna(0)
+        _b2b_rev = _b2b_g.groupby("_mdt")["_total"].sum()
+
+    _fu_units = pd.Series(dtype=float)
+    if _ov_fu is not None and not _ov_fu.empty:
+        _fu_g = _ov_fu.copy()
+        _fu_g["_mdt"] = pd.to_datetime(_fu_g["Month"])
+        _fu_g["_qty"] = pd.to_numeric(_fu_g["Quantity ordered"], errors="coerce").fillna(0)
+        _fu_units = _fu_g.groupby("_mdt")["_qty"].sum()
+
+    _amz_units = pd.Series(dtype=float)
+    if _ov_amz is not None and not _ov_amz.empty:
+        _amz_g = _ov_amz[_ov_amz["is_free"] == False].copy()
+        _amz_g["_mdt"] = pd.to_datetime(_amz_g["_month_key"])
+        _amz_units = _amz_g.groupby("_mdt")["units"].sum()
+
+    _ov_rows = []
+    for _m in sorted(_ov_cons["_mdt"].unique()):
+        _net     = _cons_net.get(_m, 0.0)
+        _b2b_r   = _b2b_rev.get(_m, 0.0)
+        _fu_u    = int(_fu_units.get(_m, 0))
+        _cu      = int(_cons_units.get(_m, 0))
+        _gross_c = _cu * _FULL_PRICE
+        _amz_u   = int(_amz_units.get(_m, 0))
+        _ov_rows.append({
+            "Month":                      pd.Timestamp(_m).strftime("%B %Y"),
+            "Net Revenue":                f"${_net:,.0f}",
+            "eCom + B2B Net Revenue":     f"${_net + _b2b_r:,.0f}",
+            "Free Units":                 _fu_u or "—",
+            "Total Units Consumer":       _cu,
+            "Gross Sales Consumers":      f"${_gross_c:,.0f}",
+            "eCom + B2B Gross Sales":     f"${_gross_c + _b2b_r:,.0f}",
+            "Amazon Units":               _amz_u or "—",
+            "Total Gross Sales eCom+AMZ": f"${_gross_c + _b2b_r + _amz_u * _FULL_PRICE:,.0f}",
+        })
+    st.dataframe(pd.DataFrame(_ov_rows), use_container_width=True, hide_index=True)
+    if _ov_b2b is None or _ov_b2b.empty:
+        st.caption(
+            "⚠ B2B/doctor order data not yet stored — upload a new Shopify CSV to populate it. "
+            "Until then, eCom + B2B columns equal the consumer-only figures."
+        )
+else:
+    st.info("No Shopify data stored yet — upload a CSV in the Shopify section.")
 
 # ── System status ─────────────────────────────────────────────────────────────
 st.markdown("<hr>", unsafe_allow_html=True)
