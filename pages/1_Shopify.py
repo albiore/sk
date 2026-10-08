@@ -56,6 +56,14 @@ def merge_data(new_df: pd.DataFrame, stored) -> pd.DataFrame:
     return combined.sort_values("Month").reset_index(drop=True)
 
 
+def load_free_units():
+    return storage.download_df("shopify_free_units.csv")
+
+
+def load_b2b_data():
+    return storage.download_df("shopify_b2b_data.csv")
+
+
 # ── 01 — Upload ───────────────────────────────────────────────────────────────
 st.markdown('<div class="section-label">01 — Upload Raw Export</div>', unsafe_allow_html=True)
 st.caption("Export from Shopify Analytics › Sales › Group by Month, Order, Product. Download as CSV.")
@@ -101,6 +109,40 @@ else:
     n_clean_orders = new_df["Order name"].nunique() if "Order name" in new_df.columns else 0
 
     storage.upload_df("shopify_data.csv", cleaned_df)
+
+    # ── Extract and persist B2B (doctor) orders ──────────────────────────────
+    _raw2 = raw_df.copy()
+    _raw2["_qty2"]   = pd.to_numeric(_raw2.get("Quantity ordered", 0), errors="coerce").fillna(0)
+    _raw2["_total2"] = pd.to_numeric(_raw2.get("Total sales",       0), errors="coerce").fillna(0)
+    _b2b_mask = (
+        _raw2["Order name"].notna() &
+        (
+            _raw2["Product title"].str.contains("Master Carton", case=False, na=False) |
+            (_raw2["_qty2"] >= 7)
+        ) &
+        (_raw2["_total2"] > 0)
+    )
+    b2b_new = (
+        _raw2[_b2b_mask][["Month", "Order name", "Product title", "Quantity ordered", "Total sales"]]
+        .drop_duplicates()
+        .copy()
+    )
+    storage.upload_df("shopify_b2b_data.csv", merge_data(b2b_new, load_b2b_data()))
+
+    # ── Extract and persist free units ───────────────────────────────────────
+    _raw2["_gross2"] = pd.to_numeric(_raw2.get("Gross sales", 0), errors="coerce").fillna(0)
+    _fu_mask = (
+        _raw2["Order name"].notna() &
+        (_raw2["_gross2"] > 0) &
+        (_raw2["_total2"] == 0)
+    )
+    fu_new = (
+        _raw2[_fu_mask][["Month", "Order name", "Product title", "Quantity ordered"]]
+        .drop_duplicates()
+        .copy()
+    )
+    storage.upload_df("shopify_free_units.csv", merge_data(fu_new, load_free_units()))
+
     ts = save_meta()
 
     new_month_labels = sorted(

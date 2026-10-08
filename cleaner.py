@@ -20,13 +20,13 @@ CLEANING_STEPS = [
     {"key": "no_order",     "label": "No order rows"},
     {"key": "tag_dupes",    "label": "Order-tag duplicate lines"},
     {"key": "brochures",    "label": "Brochures"},
-    {"key": "b2b",          "label": "B2B / wholesale (carton or qty≥12)"},
+    {"key": "b2b",          "label": "B2B / wholesale (carton or qty≥7)"},
     {"key": "non_clients",  "label": "Non-clients (free units)"},
     {"key": "zero_net",     "label": "Zero net revenue"},
 ]
 
 # Wholesale threshold: a single line at or above this qty is treated as B2B/bulk
-B2B_QTY_THRESHOLD = 12
+B2B_QTY_THRESHOLD = 7
 
 
 def clean_dataframe(df: pd.DataFrame) -> Tuple[pd.DataFrame, dict]:
