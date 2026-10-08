@@ -236,6 +236,7 @@ if _ov_cons is not None and not _ov_cons.empty:
         _ov_rows.append({
             "Month":                      pd.Timestamp(_m).strftime("%B %Y"),
             "Net Revenue":                f"${_net:,.0f}",
+            "B2B Revenue":                f"${_b2b_r:,.0f}" if _b2b_r else "—",
             "eCom + B2B Net Revenue":     f"${_net + _b2b_r:,.0f}",
             "Free Units":                 _fu_u or "—",
             "Total Units Consumer":       _cu,
@@ -247,11 +248,12 @@ if _ov_cons is not None and not _ov_cons.empty:
         _tot_net    += _net;  _tot_b2b_net += _net + _b2b_r
         _tot_fu     += _fu_u; _tot_cu      += _cu
         _tot_gross_c += _gross_c; _tot_b2b_gs += _gross_c + _b2b_r
-        _tot_amz_u  += _amz_u;   _tot_ec     += _ec
+        _tot_amz_u  += _amz_u;   _tot_ec     += _ec; _tot_b2b_r = _tot_b2b_net - _tot_net
 
     _ov_rows.append({
         "Month":                      "TOTAL",
         "Net Revenue":                f"${_tot_net:,.0f}",
+        "B2B Revenue":                f"${_tot_b2b_r:,.0f}" if _tot_b2b_r else "—",
         "eCom + B2B Net Revenue":     f"${_tot_b2b_net:,.0f}",
         "Free Units":                 int(_tot_fu) or "—",
         "Total Units Consumer":       int(_tot_cu),
