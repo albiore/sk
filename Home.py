@@ -1,13 +1,8 @@
 import streamlit as st
 import pandas as pd
-import os
 from sheets import get_sheets_client_status
 from brand import BRAND_CSS
 import storage
-
-_ROOT = os.path.dirname(os.path.abspath(__file__))
-SHOPIFY_FILE = os.path.join(_ROOT, "shopify_data.csv")
-AMAZON_FILE  = os.path.join(_ROOT, "amazon_data.csv")
 
 st.set_page_config(
     page_title="SecondKind · Data Hub",
@@ -26,10 +21,16 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# ── Load all data from Supabase (single source of truth) ─────────────────────
+_sk_raw  = storage.download_df("shopify_data.csv")
+_amz_raw = storage.download_df("amazon_data.csv")
+if _amz_raw is not None and "is_free" in _amz_raw.columns:
+    _amz_raw["is_free"] = _amz_raw["is_free"].astype(bool)
+
 # ── Status checks ─────────────────────────────────────────────────────────────
 sheets_ok     = get_sheets_client_status() == "ready"
-shopify_store = os.path.exists(SHOPIFY_FILE)
-amazon_store  = os.path.exists(AMAZON_FILE)
+shopify_store = _sk_raw is not None and not _sk_raw.empty
+amazon_store  = _amz_raw is not None and not _amz_raw.empty
 
 sheets_pill  = '<span class="pill pill-ok">● Sheets connected</span>'  if sheets_ok    else '<span class="pill pill-off">○ Sheets offline</span>'
 shopify_pill = '<span class="pill pill-ok">● Data stored</span>'       if shopify_store else '<span class="pill pill-off">○ No data yet</span>'
@@ -74,31 +75,19 @@ st.markdown("<hr>", unsafe_allow_html=True)
 if not shopify_store and not amazon_store:
     st.info("No data yet — upload files in the Shopify and Amazon sections to see combined totals here.")
 else:
-    # ── Load Shopify ──────────────────────────────────────────────────────────
+    # ── Shopify monthly aggregates ────────────────────────────────────────────
     if shopify_store:
-        sk = pd.read_csv(SHOPIFY_FILE)
-        # All cleaned Shopify revenue — includes Shipping, excludes B2B/brochures (already removed by cleaner)
-        # Note: the Performance Ov sheet push only counts Gut Balance + Mood Balance product revenue,
-        # so the Home total will be slightly higher due to Shipping revenue.
-        # Revenue includes refunds naturally (negative Total sales reduces sum)
-        sk_rev = sk.groupby("Month")["Total sales"].sum().reset_index(name="sk_revenue")
-        # Orders and units exclude refund rows (Total sales ≤ 0)
-        sk_pos = sk[sk["Total sales"] > 0]
+        sk_rev = _sk_raw.groupby("Month")["Total sales"].sum().reset_index(name="sk_revenue")
+        sk_pos = _sk_raw[_sk_raw["Total sales"] > 0]
         sk_ord = sk_pos.groupby("Month")["Order name"].nunique().reset_index(name="sk_orders")
         sk_uni = sk_pos.groupby("Month")["Quantity ordered"].sum().reset_index(name="sk_units")
         sk_monthly = sk_rev.merge(sk_ord, on="Month", how="outer").merge(sk_uni, on="Month", how="outer").fillna(0)
     else:
         sk_monthly = pd.DataFrame(columns=["Month", "sk_revenue", "sk_orders", "sk_units"])
 
-    # ── Load Amazon ───────────────────────────────────────────────────────────
+    # ── Amazon monthly aggregates (Supabase, paying orders only) ─────────────
     if amazon_store:
-        amz = pd.read_csv(AMAZON_FILE)
-        if "is_free" in amz.columns:
-            amz["is_free"] = amz["is_free"].astype(bool)
-            amz_paying = amz[~amz["is_free"]]
-        else:
-            amz_paying = amz
-        # Use _month_key (YYYY-MM-01) to align with Shopify's Month column
+        amz_paying = _amz_raw[~_amz_raw["is_free"]]
         amz_rev = amz_paying.groupby("_month_key")["revenue"].sum().reset_index()
         amz_rev.columns = ["Month", "amz_revenue"]
         amz_ord = amz_paying.groupby("_month_key")["Order ID"].nunique().reset_index()
@@ -190,10 +179,10 @@ st.caption(
 
 _FULL_PRICE = 44.99
 
-_ov_cons = storage.download_df("shopify_data.csv")
+_ov_cons = _sk_raw
 _ov_b2b  = storage.download_df("shopify_b2b_data.csv")
 _ov_fu   = storage.download_df("shopify_free_units.csv")
-_ov_amz  = storage.download_df("amazon_data.csv")
+_ov_amz  = _amz_raw
 
 if _ov_cons is not None and not _ov_cons.empty:
     _ov_cons["_mdt"]   = pd.to_datetime(_ov_cons["Month"])
@@ -288,15 +277,13 @@ with col1:
         st.warning("Google Sheets — no credentials.json")
 with col2:
     if shopify_store:
-        df = pd.read_csv(SHOPIFY_FILE)
-        months = pd.to_datetime(df["Month"]).dt.strftime("%b-%Y").unique() if "Month" in df.columns else []
-        st.info(f"Shopify — {len(df)} rows · {len(months)} months stored")
+        months = pd.to_datetime(_sk_raw["Month"]).dt.strftime("%b-%Y").unique() if "Month" in _sk_raw.columns else []
+        st.info(f"Shopify — {len(_sk_raw)} rows · {len(months)} months stored")
     else:
         st.info("Shopify — no data stored yet")
 with col3:
     if amazon_store:
-        df = pd.read_csv(AMAZON_FILE)
-        months = df["Month"].unique() if "Month" in df.columns else []
-        st.info(f"Amazon — {len(df)} orders · {len(months)} months stored")
+        months = _amz_raw["Month"].unique() if "Month" in _amz_raw.columns else []
+        st.info(f"Amazon — {len(_amz_raw)} orders · {len(months)} months stored")
     else:
         st.info("Amazon — no data stored yet")
