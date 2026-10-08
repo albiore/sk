@@ -184,7 +184,7 @@ else:
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown('<div class="section-label">Revenue &amp; Units Overview</div>', unsafe_allow_html=True)
 st.caption(
-    "Shopify consumer (Net Revenue) vs. consumer + B2B doctors orders, "
+    "Shopify consumer (Net Revenue) vs. consumer + B2B doctors orders (Master Carton or qty ≥ 7), "
     "free partner units, gross sales at list price ($44.99/unit), and Amazon paid units."
 )
 

@@ -118,7 +118,7 @@ else:
         _raw2["Order name"].notna() &
         (
             _raw2["Product title"].str.contains("Master Carton", case=False, na=False) |
-            (_raw2["_qty2"] >= 12)
+            (_raw2["_qty2"] >= 7)
         ) &
         (_raw2["_total2"] > 0)
     )
