@@ -852,15 +852,15 @@ for _m in _ov_months:
     _tot_ec   = _tot_gs + _amz_u * _FULL_PRICE
 
     _ov_rows.append({
-        "Month":                       pd.Timestamp(_m).strftime("%B %Y"),
-        "Net Revenue":                 f"${_net:,.0f}",
-        "Total Revenue":               f"${_total_r:,.0f}",
-        "Free Units":                  _fu_u or "—",
-        "Total Units Consumer":        _cu,
-        "Gross Sales Consumers":       f"${_gross_c:,.0f}",
-        "Total Gross Sales":           f"${_tot_gs:,.0f}",
-        "Amazon Units":                _amz_u or "—",
-        "Total Gross Sales eCom+AMZ":  f"${_tot_ec:,.0f}",
+        "Month":                        pd.Timestamp(_m).strftime("%B %Y"),
+        "Net Revenue":                  f"${_net:,.0f}",
+        "eCom + B2B Net Revenue":       f"${_total_r:,.0f}",
+        "Free Units":                   _fu_u or "—",
+        "Total Units Consumer":         _cu,
+        "Gross Sales Consumers":        f"${_gross_c:,.0f}",
+        "eCom + B2B Gross Sales":       f"${_tot_gs:,.0f}",
+        "Amazon Units":                 _amz_u or "—",
+        "Total Gross Sales eCom+AMZ":   f"${_tot_ec:,.0f}",
     })
 
 if _ov_rows:
@@ -868,5 +868,5 @@ if _ov_rows:
     if _ov_b2b is None or _ov_b2b.empty:
         st.caption(
             "⚠ B2B/doctor order data not yet stored — upload a new Shopify CSV to populate it. "
-            "Until then, Total Revenue = Net Revenue and Total Gross Sales = Gross Sales Consumers."
+            "Until then, eCom + B2B Net Revenue = Net Revenue and eCom + B2B Gross Sales = Gross Sales Consumers."
         )
